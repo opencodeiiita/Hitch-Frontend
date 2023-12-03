@@ -10,6 +10,31 @@ Hitch is a  Collaborative Workspace Platform, leveraging the power of Next.js an
 * NextUI
 * Vercel
 
+## 🚀 Features
+
+1. **Secure Authentication & Authorization:**
+   - Robust user authentication and role-based authorization ensure a secure collaboration environment.
+
+2. **Workspace Structure:**
+   - Effortless creation and management of workspaces, offering multiple channels for organized collaboration.
+
+3. **Channel Management:**
+   - Precision control over channels, supporting subchannels, locking, and role assignment for effective organization.
+
+4. **Notes and File Sharing:**
+   - Dedicated sections within channels for notes, discussions, and seamless file uploads and sharing.
+
+5. **Roles and Permissions:**
+   - Granular control with roles such as admin, member, and guest, defining specific access permissions for efficient management.
+
+6. **Huddle Feature:**
+   - Real-time audio and video conferencing within channels, enhancing communication and collaboration.
+
+7. **Centralized Filtered File Sharing:**
+   - Streamlined document management with advanced filters, version control, and automated categorization for efficient file sharing.
+
+
+
 ## Design Template
 [Open Figma File ](Will Be Updated Soon)
 
