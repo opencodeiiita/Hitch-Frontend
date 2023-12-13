@@ -48,7 +48,7 @@ Hitch is a  Collaborative Workspace Platform, leveraging the power of Next.js an
 
 
 ## Design Template
-[Open Figma File ](Will Be Updated Soon)
+https://www.figma.com/file/vyCC47vkwtmcoh1faTifkM/Hitch-Landing-Page?type=design&node-id=0-1&mode=design&t=K9GcAfpl7pGfrENr-0
 
 ## Dependencies
 You need npm/yarn installed in your local machine in order to run this app.
