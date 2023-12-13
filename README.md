@@ -10,6 +10,18 @@ Hitch is a  Collaborative Workspace Platform, leveraging the power of Next.js an
 * NextUI
 * Vercel
 
+* 
+### 🎨 Tailwind CSS
+
+-   [Tailwind Components](https://www.material-tailwind.com/docs/react/collapse)
+-   [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
+-   [Official Docs](https://tailwindcss.com/docs/installation)
+-   [Tailwind CSS Crash Course](https://youtu.be/UBOj6rqRUME?si=iKI5kUFD0WgP4cL7)
+
+### 🎨 Antd
+
+-   [Official Docs](https://ant.design/components/overview)
+
 ## 🚀 Features
 
 1. **Secure Authentication & Authorization:**
