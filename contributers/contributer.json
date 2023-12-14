@@ -71,4 +71,9 @@
         "githubid": "PoonamGate",
         "college" : "IIITA"
     },
+    {
+        "name": "Jai Khanna",
+        "githubid": "CodinJack",
+        "college" : "IIITA"
+    },
 ]
