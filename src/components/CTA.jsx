@@ -1,7 +1,7 @@
 const CTA=()=>
 {
     return (
-        <div className='pl-32 pr-28 pt-14 flex flex-col md:flex-row bg-[#F9F8FE] max-sm:justify-center max-sm:pl-4 max-sm:pb-24 max-xl:px-4 max-sm:relative'>
+        <div className='pl-32 pr-28 pt-14 flex flex-col md:flex-row bg-[#F9F8FE] max-sm:justify-center max-sm:pl-4 max-sm:pb-24 max-xl:px-4 max-sm:relative min-h-screen'>
             <section className='flex flex-col mr-36  max-sm:w-full max-md:mr-0 '>
                 <h1 className='text-5xl font-semibold max-sm:font-bold max-sm:text-4xl'>Hitch a ride to collaboration, and teamwork takes flight.</h1>
                 <p className='text-text font-medium leading-[30px] mt-2 max-sm:leading-7 max-sm:text-[#696969]'>Hitch: Unleashing creativity with structured channels, real-time huddle sessions, and efficient file sharing—a platform where collaboration becomes an inspiring journey.</p>
