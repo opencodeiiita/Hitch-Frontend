@@ -81,6 +81,12 @@
         "name": "Jai Khanna",
         "githubid": "CodinJack",
         "college" : "IIITA"
+    },
+    {
+        "name": "Buddhi Sagar Panjiyar",
+        "githubid": "iam-buddhi",
+        "college" : "IIITA"
     }
+
 
 ]
