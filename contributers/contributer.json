@@ -60,7 +60,7 @@
         "name": "Shrutika Rathi",
         "githubid": "shrutikarathi6",
         "college": "IIITA"
-     }
+     },
     {
         "name": "Atharva Chavan",
         "githubid": "atharva0192",
@@ -72,8 +72,15 @@
         "college" : "IIITA"
     },
     {
+        "name": "Ajay Kumar",
+        "githubid": "ajay484",
+        "college": "IIITA"
+    },
+
+    {
         "name": "Jai Khanna",
         "githubid": "CodinJack",
         "college" : "IIITA"
-    },
+    }
+
 ]
