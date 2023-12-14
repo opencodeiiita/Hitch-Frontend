@@ -1,8 +1,8 @@
 const CTA=()=>
 {
     return (
-        <div className='pl-32 pr-28 pt-14 flex flex-col md:flex-row bg-[#F9F8FE] max-sm:justify-center max-sm:pl-4 max-sm:pb-24 max-xl:px-4 max-sm:relative min-h-screen'>
-            <section className='flex flex-col mr-36  max-sm:w-full max-md:mr-0 '>
+        <div className='pl-32 pr-28 pt-14 flex flex-col md:flex-row bg-[#F9F8FE] content-start items-center max-sm:justify-center max-sm:pl-4 max-sm:pb-24 max-xl:px-4 max-sm:relative min-h-[80vh]'>
+            <section className='flex flex-col mr-36 space-y-10  max-sm:w-full max-md:mr-0 lg:-mt-[10%]'>
                 <h1 className='text-5xl font-semibold max-sm:font-bold max-sm:text-4xl'>Hitch a ride to collaboration, and teamwork takes flight.</h1>
                 <p className='text-text font-medium leading-[30px] mt-2 max-sm:leading-7 max-sm:text-[#696969]'>Hitch: Unleashing creativity with structured channels, real-time huddle sessions, and efficient file sharing—a platform where collaboration becomes an inspiring journey.</p>
 
@@ -20,7 +20,7 @@ const CTA=()=>
                 </aside>
             </section>
 
-            <section className='flex flex-col justify-between max-md:mt-16 max-sm:z-10'>
+            <section className='flex flex-col justify-between space-y-10  max-md:mt-16 max-sm:z-10'>
                 <aside className='grid auto-cols-auto gap-x-5 gap-y-2 max-sm:gap-y-0 max-sm:gap-x-3'>
                     <span className='flex w-14 h-14 justify-center items-center rounded-lg shadow-2xl bg-white max-sm:w-10 max-sm:h-10'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
