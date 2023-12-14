@@ -32,6 +32,13 @@
         "college" : "IITH"
     },
     {
+
+      "name": "Shaurya Jain",
+      "githubid": "ShauryaJain03",
+      "college": "IIITA"
+    },
+    {
+
         "name": "Tejas Sharma",
         "githubid":"Tej-as1",
         "college":"IIITA"
@@ -42,12 +49,13 @@
         "githubid":"Nitu-Sherawat",
         "college":"IIITA"
     },
-    {
+     {
 
         "name": "Pranav Bansal",
         "githubid": "PranavBansal21",
         "college": "IIITA"
      }
+
     
 
 ]
