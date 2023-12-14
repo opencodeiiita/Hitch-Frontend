@@ -82,6 +82,11 @@
         "college" : "IIITA"
     },
 
+    {
+        "name": "Buddhi Sagar Panjiyar",
+        "githubid": "iam-buddhi",
+        "college" : "IIITA"
+    },
     { 
         "name": "Parimal Amrutkar",
         "githubid": "parimal-10",
@@ -109,4 +114,5 @@
         "college": "IIITA"
 
     }
+
 ]
