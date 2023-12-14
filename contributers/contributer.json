@@ -81,6 +81,11 @@
         "name": "Jai Khanna",
         "githubid": "CodinJack",
         "college" : "IIITA"
-    }
+    },
 
+    {
+     "name": "Vasu Singla",
+        "githubid": "vasusingla545",
+        "college": "IIITA"
+    },
 ]
