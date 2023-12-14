@@ -81,9 +81,32 @@
         "githubid": "CodinJack",
         "college" : "IIITA"
     },
+
     { 
         "name": "Parimal Amrutkar",
         "githubid": "parimal-10",
         "college" : "IIITA"
+
+    },
+    {
+        "name": "Ayush Sahu",
+        "githubid": "Murdock9803",
+        "college" : "IIT(BHU)"
+    },
+    {
+        "name": "Rudresh Dabre",
+        "githubid": "Rudreshdabre12",
+        "college" : "IIITA"
+    },
+    {
+        "name": "Sarthak Verma",
+        "githubid": "sarthakvermaa",
+        "college" : "IIITA"
+    },
+    {
+     "name": "Vasu Singla",
+        "githubid": "vasusingla545",
+        "college": "IIITA"
+
     }
 ]
