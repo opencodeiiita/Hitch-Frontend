@@ -66,6 +66,9 @@
         "githubid": "atharva0192",
         "college" : "IIITA"
     },
-    
-
+    {
+        "name": "Poonam Gate",
+        "githubid": "PoonamGate",
+        "college" : "IIITA"
+    },
 ]
