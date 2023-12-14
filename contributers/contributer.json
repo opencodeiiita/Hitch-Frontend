@@ -1,5 +1,12 @@
-{
-    "name":"Kushal Bansal",
-    "githubid":"kushal7201",
-    "college":"IIITA"
-}
+[
+    {
+        "name": "Kushal Bansal",
+        "githubid": "kushal7201",
+        "college": "IIITA"
+    },
+    {
+        "name": "Apoorv Mittal",
+        "githubid": "Apoorv012",
+        "college": "JIIT"
+    }
+]
