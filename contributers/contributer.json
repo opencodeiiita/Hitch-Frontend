@@ -81,6 +81,11 @@
         "name": "Jai Khanna",
         "githubid": "CodinJack",
         "college" : "IIITA"
+    },
+    {
+        "name": "Rudresh Dabre",
+        "githubid": "Rudreshdabre12",
+        "college" : "IIITA"
     }
 
 ]
