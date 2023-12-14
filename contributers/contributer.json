@@ -1,4 +1,6 @@
 [
+
+
     {
         "name": "Kushal Bansal",
         "githubid": "kushal7201",
@@ -18,5 +20,55 @@
         "name": "Harshal Gainer",
         "githubid": "Harshal5167",
         "college" : "IIITA"
-    }
+    },
+    {
+        "name": "Aryan Raj",
+        "githubid": "Aryan4884",
+        "college" : "IIT,BHU"
+    },
+    {
+        "name": "Govinda Rohith",
+        "githubid": "GovindaRohith",
+        "college" : "IITH"
+    },
+    {
+
+      "name": "Shaurya Jain",
+      "githubid": "ShauryaJain03",
+      "college": "IIITA"
+    },
+    {
+
+        "name": "Tejas Sharma",
+        "githubid":"Tej-as1",
+        "college":"IIITA"
+    },
+    {
+
+        "name": "Nitu Sherawat",
+        "githubid":"Nitu-Sherawat",
+        "college":"IIITA"
+    },
+     {
+
+        "name": "Pranav Bansal",
+        "githubid": "PranavBansal21",
+        "college": "IIITA"
+     },
+     {
+
+        "name": "Shrutika Rathi",
+        "githubid": "shrutikarathi6",
+        "college": "IIITA"
+     }
+    {
+        "name": "Atharva Chavan",
+        "githubid": "atharva0192",
+        "college" : "IIITA"
+    },
+    {
+        "name": "Poonam Gate",
+        "githubid": "PoonamGate",
+        "college" : "IIITA"
+    },
 ]
