@@ -67,6 +67,11 @@
         "college" : "IIITA"
     },
     {
+        "name": "Anushka Pandit",
+        "githubid": "anushkp1107",
+        "college" : "IIITA"
+    },
+    {
         "name": "Poonam Gate",
         "githubid": "PoonamGate",
         "college" : "IIITA"
@@ -76,11 +81,66 @@
         "githubid": "ajay484",
         "college": "IIITA"
     },
-
     {
         "name": "Jai Khanna",
         "githubid": "CodinJack",
         "college" : "IIITA"
-    }
+    },
 
+    {
+        "name": "Aditya Arya",
+        "githubid": "arya-007",
+        "college" : "IIITA"
+    },
+
+    {
+        "name": "Buddhi Sagar Panjiyar",
+        "githubid": "iam-buddhi",
+        "college" : "IIITA"
+    },
+    { 
+        "name": "Parimal Amrutkar",
+        "githubid": "parimal-10",
+        "college" : "IIITA"
+
+    },
+    {
+        "name": "Ayush Sahu",
+        "githubid": "Murdock9803",
+        "college" : "IIT(BHU)"
+    },
+    {
+        "name": "Rudresh Dabre",
+        "githubid": "Rudreshdabre12",
+        "college" : "IIITA"
+    },
+    {
+        "name": "Sarthak Verma",
+        "githubid": "sarthakvermaa",
+        "college" : "IIITA"
+    },
+    {
+     "name": "Vasu Singla",
+        "githubid": "vasusingla545",
+        "college": "IIITA"
+
+    },
+    {
+        "name": "Nandini Gupta",
+        "githubid": "Nandinig24",
+        "college" : "IIITA"
+    }
+    {
+     "name": "Deepanshu Kumar",
+        "githubid": "dk414",
+        "college" : "IIITA"
+    },  
+
+
+    {
+        "name": "Swati Shah",
+        "githubid": "shahswati098",
+        "college": "IIITA"
+
+    },
 ]
