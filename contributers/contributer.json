@@ -67,6 +67,11 @@
         "college" : "IIITA"
     },
     {
+        "name": "Anushka Pandit",
+        "githubid": "anushkp1107",
+        "college" : "IIITA"
+    },
+    {
         "name": "Poonam Gate",
         "githubid": "PoonamGate",
         "college" : "IIITA"
@@ -119,10 +124,23 @@
         "githubid": "vasusingla545",
         "college": "IIITA"
 
+    },
+    {
+        "name": "Nandini Gupta",
+        "githubid": "Nandinig24",
+        "college" : "IIITA"
     }
     {
      "name": "Deepanshu Kumar",
         "githubid": "dk414",
         "college" : "IIITA"
+    },  
+
+
+    {
+        "name": "Swati Shah",
+        "githubid": "shahswati098",
+        "college": "IIITA"
+
     },
 ]
