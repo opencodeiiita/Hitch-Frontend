@@ -18,12 +18,16 @@
         "name": "Harshal Gainer",
         "githubid": "Harshal5167",
         "college" : "IIITA"
-    }
+    },
     {
         "name": "Aryan Raj",
         "githubid": "Aryan4884",
         "college" : "IIT,BHU"
+    },
+    {
+        "name": "Govinda Rohith",
+        "githubid": "GovindaRohith",
+        "college" : "IITH"
     }
-
     
 ]
