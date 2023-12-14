@@ -8,7 +8,7 @@ export default function page () {
   return (
     <div className=' overflow-x-hidden z-20'>
         <NavBar />
-        <section className='flex mr-4 mt-32 ml-32 pb-40 max-lg:hidden'>
+        <section className='flex mr-4 mt-32 ml-32 pb-40'>
             <section className='flex flex-col z-10 '>
                 <p className='text-[80px] leading-[90px] font-bold'>Connecting Ideas, Powering Teamwork.</p>
                 <svg className='mt-5' xmlns="http://www.w3.org/2000/svg" width="487" height="34" viewBox="0 0 487 34" fill="none">
