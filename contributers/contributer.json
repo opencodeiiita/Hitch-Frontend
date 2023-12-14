@@ -82,10 +82,20 @@
         "githubid": "CodinJack",
         "college" : "IIITA"
     },
+
     {
         "name": "Rudresh Dabre",
         "githubid": "Rudreshdabre12",
         "college" : "IIITA"
+    },
+     {
+        "name": "Sarthak Verma",
+        "githubid": "sarthakvermaa",
+        "college" : "IIITA"
+    },
+    {
+     "name": "Vasu Singla",
+        "githubid": "vasusingla545",
+        "college": "IIITA"
     }
-
 ]
