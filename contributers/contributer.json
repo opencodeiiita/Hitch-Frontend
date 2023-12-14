@@ -130,10 +130,17 @@
         "githubid": "Nandinig24",
         "college" : "IIITA"
     }
+    {
+     "name": "Deepanshu Kumar",
+        "githubid": "dk414",
+        "college" : "IIITA"
+    },  
+
 
     {
         "name": "Swati Shah",
         "githubid": "shahswati098",
         "college": "IIITA"
+
     },
 ]
