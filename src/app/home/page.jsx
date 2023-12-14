@@ -81,9 +81,60 @@ const CTA=()=>
     )
 }
 
+const Footer=()=>
+{
+    return (
+        <footer className='bg-primary-dark px-32 py-20 mt-2'>
+            <main className='flex justify-between pr-6'>
+                <section className='space-y-7 mr-[15%]'>
+                    <h1 className='text-[#FFC728] text-5xl font-semibold'>Hitch</h1>
+                    <p className='text-lg font-medium text-text'>Get started now try our product</p>
+                    <aside className='relative w-[410px] border-2 border-text px-5 py-3 rounded-full'>
+                        <input className='bg-transparent placeholder-text w-3/4 text-white border-0 outline-none' placeholder='Enter your email here'/>
+                        <button className='rounded-full bg-[#FFC728] p-2 absolute right-1 top-1'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </button>
+                    </aside>
+                </section>
+                <ul className='text-text text-lg font-medium grid grid-cols-1 gap-y-4'>
+                    <li className='text-white mb-2'>Support</li>
+                    <li className='hover:underline hover:cursor-pointer'>Help centre</li>
+                    <li className='hover:underline hover:cursor-pointer'>Account information</li>
+                    <li className='hover:underline hover:cursor-pointer'>About</li>
+                    <li className='hover:underline hover:cursor-pointer'>Contact us</li>
+                </ul>
+                <ul className='text-text text-lg font-medium grid grid-cols-1 gap-y-4'>
+                    <li className='text-white mb-2'>Help and Solution</li>
+                    <li className='hover:underline hover:cursor-pointer'>Talk to support</li>
+                    <li className='hover:underline hover:cursor-pointer'>Support docs</li>
+                    <li className='hover:underline hover:cursor-pointer'>System status</li>
+                    <li className='hover:underline hover:cursor-pointer'>Covid response</li>
+                </ul>
+                <ul className='text-text text-lg font-medium grid grid-cols-1 gap-y-4 '>
+                    <li className='text-white mb-2'>Product</li>
+                    <li className='hover:underline hover:cursor-pointer'>Update</li>
+                    <li className='hover:underline hover:cursor-pointer'>Security</li>
+                    <li className='hover:underline hover:cursor-pointer'>Beta test</li>
+                    <li className='hover:underline hover:cursor-pointer'>Pricing product</li>
+                </ul>
+            </main>
+
+            <aside className='flex justify-around mt-14'>
+                <span className='text-white text-lg font-medium flex-grow'>© 2023 Hitch Inc. Copyright and rights reserved</span>
+                <span className='text-white text-lg font-medium hover:cursor-pointer hover:underline'>Terms and Condtions</span>
+                <span className='text-text text-lg font-medium -mt-1 px-2'>.</span>
+                <span className='text-white text-lg font-medium hover:cursor-pointer hover:underline'>Privacy Policy</span>
+            </aside>
+        </footer>
+    )
+}
+
 export default function page () {
   return (
-    <div className=''>
+    <div className='text overflow-x-hidden'>
         <NavBar />
         <section className='flex mr-4 mt-32 ml-32 pb-32'>
             <section className='flex flex-col z-10'>
@@ -108,6 +159,7 @@ export default function page () {
 
         </section>
         <CTA />
+        <Footer />
     </div>
   )
 }
