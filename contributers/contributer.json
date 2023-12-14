@@ -28,6 +28,11 @@
         "name": "Govinda Rohith",
         "githubid": "GovindaRohith",
         "college" : "IITH"
+    },
+    {
+        "name": "Ajay Kumar",
+        "githubid": "ajay484",
+        "college" : "IITA"
     }
     
 ]
