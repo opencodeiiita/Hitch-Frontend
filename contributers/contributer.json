@@ -84,11 +84,16 @@
     },
 
     {
+        "name": "Ayush Sahu",
+        "githubid": "Murdock9803",
+        "college" : "IIT(BHU)"
+    },
+    {
         "name": "Rudresh Dabre",
         "githubid": "Rudreshdabre12",
         "college" : "IIITA"
     },
-     {
+    {
         "name": "Sarthak Verma",
         "githubid": "sarthakvermaa",
         "college" : "IIITA"
@@ -98,4 +103,5 @@
         "githubid": "vasusingla545",
         "college": "IIITA"
     }
+
 ]
