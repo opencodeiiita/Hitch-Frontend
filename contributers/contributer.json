@@ -1,4 +1,6 @@
 [
+
+
     {
         "name": "Kushal Bansal",
         "githubid": "kushal7201",
@@ -30,9 +32,21 @@
         "college" : "IITH"
     },
     {
+
         "name": "Ajay Kumar",
         "githubid": "ajay484",
         "college" : "IIITA"
     }
+
+        "name": "Tejas Sharma",
+        "githubid":"Tej-as1",
+        "college":"IIITA"
+    },
+    {
+        "name": "Pranav Bansal",
+        "githubid": "PranavBansal21",
+        "college": "IIITA"
+     } 
     
+
 ]
