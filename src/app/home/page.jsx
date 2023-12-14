@@ -2,12 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import landingPagePoster from "../../../public/landingPagePoster.png";
 import NavBar from '@/components/NavBar';
+import CTA from '@/components/CTA';
 
 export default function page () {
   return (
     <div className=' overflow-x-hidden z-20'>
         <NavBar />
-        <section className='flex mr-4 mt-32 ml-32 pb-40 '>
+        <section className='flex mr-4 mt-32 ml-32 pb-40 max-lg:hidden'>
             <section className='flex flex-col z-10 '>
                 <p className='text-[80px] leading-[90px] font-bold'>Connecting Ideas, Powering Teamwork.</p>
                 <svg className='mt-5' xmlns="http://www.w3.org/2000/svg" width="487" height="34" viewBox="0 0 487 34" fill="none">
@@ -30,8 +31,9 @@ export default function page () {
             <aside className='absolute overflow-x-hidden w-[99vw] h-[90vh] top-0 left-0 bg-gradient-to-r from-primary/20 to-white blur-2xl -z-20'></aside>
             <aside className='absolute w-96 h-96 rounded-full bg-white top-1/3 right-1/3 blur-3xl -z-10'></aside>
             <aside className='absolute w-[500px] h-96 rounded-full bg-white -top-20 left-[55%] blur-2xl  -z-10'></aside>
-            <aside className='absolute w-96 h-96 rounded-full bg-primary/20 -right-20 top-2/3 blur-2xl -z-10'></aside>
+            <aside className='absolute w-96 h-96 rounded-full bg-primary/20 right-0 top-2/3 blur-2xl -z-10 overflow-x-hidden'></aside>
         </section>
+        <CTA />
     </div>
   )
 }
