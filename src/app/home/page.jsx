@@ -3,6 +3,7 @@ import Image from 'next/image'
 import landingPagePoster from "../../../public/landingPagePoster.png";
 import NavBar from '@/components/NavBar';
 import CTA from '@/components/CTA';
+import Footer from '@/components/Footer';
 
 export default function page () {
   return (
@@ -34,6 +35,7 @@ export default function page () {
             <aside className='absolute w-96 h-96 rounded-full bg-primary/20 right-0 top-2/3 blur-2xl -z-10 overflow-x-hidden'></aside>
         </section>
         <CTA />
+        <Footer />
     </div>
   )
 }
