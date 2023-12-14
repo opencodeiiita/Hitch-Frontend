@@ -12,6 +12,11 @@
     {
         "name": "Sanjay Paul",
         "githubid": "rebornstar1",
-        "college" : "IIITA"
+        "college": "IIITA"
+    },
+    {
+        "name": "Diwakar Kashyap",
+        "githubid": "DIWAKARKASHYAP",
+        "college": "Ganjdundwara PG college"
     }
 ]
