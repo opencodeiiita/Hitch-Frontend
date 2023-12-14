@@ -1,5 +1,22 @@
-{
-    "name":"",
-    "githubid":"",
-    "college":""
-}
+[
+    {
+        "name": "Kushal Bansal",
+        "githubid": "kushal7201",
+        "college": "IIITA"
+    },
+    {
+        "name": "Apoorv Mittal",
+        "githubid": "Apoorv012",
+        "college": "JIIT"
+    },
+    {
+        "name": "Sanjay Paul",
+        "githubid": "rebornstar1",
+        "college" : "IIITA"
+    },
+    {
+        "name": "Harshal Gainer",
+        "githubid": "Harshal5167",
+        "college" : "IIITA"
+    }
+]
