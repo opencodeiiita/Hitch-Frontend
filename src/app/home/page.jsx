@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import landingPagePoster from "../../../public/landingPagePoster.png";
-import NavBar from '@/components/NavBar';
-import CTA from '@/components/CTA';
-import Footer from '@/components/Footer';
+import NavBar from '@/components/home/NavBar';
+import CTA from '@/components/home/CTA';
+import Footer from '@/components/home/Footer';
 
 export default function page () {
   return (
