@@ -76,18 +76,22 @@ const SignInPage = () => {
           {/* Email and Password Form */}
           <form className='mb-6' onSubmit={handleSubmit}>
             <div className='mb-4'>
+              <label htmlFor='email' className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Email</label>
               <input
                 type='email'
-                placeholder='Email'
+                id='email'
+                placeholder='Enter your email'
                 className='rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
                 value={email}
                 onChange={handleEmailChange}
               />
             </div>
             <div className='mb-4'>
+              <label htmlFor='password' className='text-left block text-xs md:text-sm lg:text-base font-bold mb-1'>Password</label>
               <input
                 type='password'
-                placeholder='Password'
+                id='password'
+                placeholder='Enter your password'
                 className='rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
                 value={password}
                 onChange={handlePasswordChange}
