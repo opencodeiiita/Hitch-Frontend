@@ -1,6 +1,4 @@
 [
-
-
     {
         "name": "Kushal Bansal",
         "githubid": "kushal7201",
@@ -129,18 +127,22 @@
         "name": "Nandini Gupta",
         "githubid": "Nandinig24",
         "college" : "IIITA"
-    }
+    },
     {
      "name": "Deepanshu Kumar",
         "githubid": "dk414",
         "college" : "IIITA"
     },  
-
-
     {
         "name": "Swati Shah",
         "githubid": "shahswati098",
         "college": "IIITA"
 
     },
+    {
+        "name": "Navaneetha Krishnan R",
+        "githubid": "rnavaneeth992",
+        "college": "CEG",
+        "email":"r.navaneeth992@gmail.com"
+    }
 ]
