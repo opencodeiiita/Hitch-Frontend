@@ -22,6 +22,11 @@
         "college" : "IIITA"
     },
     {
+        "name": "Naramala siva venkata pavan",
+        "githubid": "NSVPavan",
+        "college" : "IIITA"
+    },
+    {
         "name": "Aryan Raj",
         "githubid": "Aryan4884",
         "college" : "IIT,BHU"
@@ -146,6 +151,13 @@
     {
         "name": "Rohit Pandey",
         "githubid": "Rohit-110",
+        "college": "IIITA"
+      
+    },
+
+        "name": "Prakhar Shukla",
+        "githubid": "tonyStark-Jr",
+
         "college": "IIITA"
 
     },
