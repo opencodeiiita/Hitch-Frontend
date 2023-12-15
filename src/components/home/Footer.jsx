@@ -1,7 +1,7 @@
 const Footer=()=>
 {
     return (
-        <footer className='bg-primary-dark px-32 py-20 mt-2 max-sm:px-6 max-sm:pt-12 max-sm:pb-4 max-sm:min-h-[75vh] max-sm:relative'>
+        <footer className='bg-primary-dark px-32 py-20 mt-2 max-sm:px-6 max-sm:pt-12 max-sm:pb-4 max-sm:min-h-[95vh] max-sm:relative'>
             <main className='flex justify-between pr-6 max-xl:grid max-xl:grid-cols-2 max-xl:gap-y-6 max-sm:grid-cols-1 max-sm:ml-8 max-sm:pr-0'>
                 <section className='space-y-7 mr-[15%] max-xl:col-span-2 max-sm:col-span-1 max-sm:space-y-3 max-sm:mr-0 max-sm:mb-6'>
                     <h1 className='text-[#FFC728] text-5xl font-semibold max-sm:text-6xl max-sm:font-bold'>Hitch</h1>
