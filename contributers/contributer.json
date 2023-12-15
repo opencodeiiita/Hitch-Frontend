@@ -129,7 +129,7 @@
         "name": "Nandini Gupta",
         "githubid": "Nandinig24",
         "college" : "IIITA"
-    }
+    },
     {
      "name": "Deepanshu Kumar",
         "githubid": "dk414",
@@ -143,4 +143,10 @@
         "college": "IIITA"
 
     },
+    
+    {
+        "name": "Vedant Jadhav",
+        "githubid": "VedantJ28",
+        "college": "IIITA"
+    }
 ]
