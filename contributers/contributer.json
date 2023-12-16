@@ -144,8 +144,6 @@
         "college": "IIITA"
 
     },
-
-    
     {
         "name": "Jay Sharma",
         "githubid": "Jaysharma100",
@@ -155,11 +153,15 @@
         "githubid": "Rohit-110",
         "college": "IIITA"
     },
+    {
 
         "name": "Prakhar Shukla",
         "githubid": "tonyStark-Jr",
-
         "college": "IIITA"
-
+    },
+    {
+        "name":"Veerathu Sri Sindhu",
+        "githubid":"Sindhu194",
+        "college":"IIITA"
     }
 ]
