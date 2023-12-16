@@ -1,17 +1,13 @@
-'use client'
-import React, {useState} from 'react'
+import React from 'react'
 import Image from 'next/image'
 import landingPagePoster from "../../../public/landingPagePoster.png";
 import NavBar from '@/components/navBar/NavBar';
 import CTA from '@/components/CTA/CTA';
 import Footer from '@/components/footer/Footer';
 
-import CreateWorkspace from '@/components/workspace/CreateWorkspace';
-
 export default function page () {
-    const [showModal,setShowModal] = useState(false);
   return (
-    <>{showModal && <CreateWorkspace setShowModal={setShowModal} />}
+    
     <div className=' overflow-x-hidden z-20'>
         <NavBar />
         <section className='flex mr-4 mt-32 ml-32 py-12 min-h-screen'>
@@ -39,11 +35,8 @@ export default function page () {
             <aside className='absolute w-[500px] h-96 rounded-full bg-white -top-20 left-[55%] blur-2xl  -z-10'></aside>
             <aside className='absolute w-96 h-96 rounded-full bg-primary/20 right-0 top-2/3 blur-2xl -z-10 overflow-x-hidden'></aside>
         </section>
-        <button className='p-3 bg-primary text-white absolute top-2/4 right-1/2 z-30' onClick={()=>setShowModal(true)}>Click to open modal</button>
-        
         <CTA />
         <Footer />
     </div>
-    </>
   )
 }
