@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import styled, { css } from "styled-components";
 
 const Checkbox = styled.input`
@@ -116,6 +116,22 @@ const RigthSignUp = () => {
     });
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    // Event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
       <div className='text-center w-4/5'>
@@ -135,7 +151,7 @@ const RigthSignUp = () => {
             <span style={{color: "#828282"}} className='text-xs md:text-sm lg:text-base'>Continue with Google</span>
         </button>
 
-        <form className='mb-6 grid-cols-2 grid gap-4'>
+        <div className='mb-6 grid-cols-1 grid md:grid-cols-2 grid gap-4'>
           <div className='mb-4 col-span-full'>
             <label htmlFor='name' style={{ color: "#828282" }} className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Name</label>
             <input
@@ -147,7 +163,7 @@ const RigthSignUp = () => {
               onChange={handleNameChange}
             />
           </div>
-          <div className='mb-4'>
+          <div style={{ gridColumn: isMobile ? 'span 2' : 'initial' }} className='mb-4'>
             <label htmlFor='email' style={{ color: "#828282" }} className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Email</label>
             <input
               type='email'
@@ -158,7 +174,7 @@ const RigthSignUp = () => {
               onChange={handleEmailChange}
             />
           </div>
-          <div className='mb-4'>
+          <div style={{ gridColumn: isMobile ? 'span 2' : 'initial' }}  className='mb-4'>
             <label htmlFor='username' style={{ color: "#828282" }} className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Username</label>
             <input
               type='text'
@@ -169,7 +185,7 @@ const RigthSignUp = () => {
               onChange={handleUsernameChange}
             />
           </div>
-          <div className='mb-4'>
+          <div style={{ gridColumn: isMobile ? 'span 2' : 'initial' }} className='mb-4'>
             <label htmlFor='password' style={{ color: "#828282" }} className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Password</label>
             <input
               type='password'
@@ -180,7 +196,7 @@ const RigthSignUp = () => {
               onChange={handlePasswordChange}
             />
           </div>
-          <div className='mb-4'>
+          <div style={{ gridColumn: isMobile ? 'span 2' : 'initial' }} className='mb-4'>
             <label htmlFor='confirmPassword' style={{ color: "#828282" }} className='block text-left text-xs md:text-sm lg:text-base font-bold mb-1'>Confirm Password</label>
             <input
               type='password'
@@ -197,7 +213,7 @@ const RigthSignUp = () => {
             <span style={{ color: "#A1A1A1" }} className='text-xs md:text-sm lg:text-base'>Remember me</span>
             <a href='/' style={{ color: "#390A75" }} className='ml-auto font-bold text-xs md:text-sm lg:text-base'>Forgot Password?</a>
           </div>
-        </form>
+        </div>
         <button
             type='submit'
             onClick={handleSubmit}
