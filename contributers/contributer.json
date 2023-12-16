@@ -150,28 +150,28 @@
         "college": "IIITA"
     },
     {
-
         "name":"Veerathu Sri Sindhu",
         "githubid":"Sindhu194",
         "college":"IIITA"
     },
-
     {
         "name":"Sugam Sareen",
         "githubid":"ssugam10",
         "college":"IIITA"
     },
-
-     {
+    {
         "name":"Satvik Dubey",
         "githubid":"Satvik7773",
         "college":"IIITA"
     },
     {
-
-
         "name": "Veerathu Sri Sindhu",
         "githubid": "Sindhu194",
         "college": "IIITA"
+    },
+    {
+        "name": "Navaneetha Krishnan R",
+        "githubid": "rnavaneeth992",
+        "college": "CEG"
     }
 ]
