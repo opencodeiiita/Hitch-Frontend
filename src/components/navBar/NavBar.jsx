@@ -1,5 +1,18 @@
+'use client'
+import { useRouter } from 'next/navigation'
 const NavBar=()=>
 {
+    const router = useRouter()
+
+    // Function to handle login button click
+    const handleLoginClick = () => {
+        router.push('/auth/sign-in');
+    };
+
+    // Function to handle sign up button click
+    const handleSignUpClick = () => {
+        router.push('/auth/sign-up');
+    };
     return (
         <nav className='mx-32 pt-10 box-content flex justify-between items-center'>
             {/* Insert final logo svg inplace of dummy logo */}
@@ -16,8 +29,8 @@ const NavBar=()=>
             </main>
 
             <section className='text space-x-2'>
-                <button className='text-text font-medium p-2 hover:text-primary'>Login</button>
-                <button className='text-white bg-primary p-2 rounded-xl hover:shadow-md hover:shadow-primary-dark'>Sign Up</button>
+                <button onClick={handleLoginClick} className='text-text font-medium p-2 hover:text-primary'>Login</button>
+                <button onClick={handleSignUpClick}  className='text-white bg-primary p-2 rounded-xl hover:shadow-md hover:shadow-primary-dark'>Sign Up</button>
             </section>
         </nav>
     )
