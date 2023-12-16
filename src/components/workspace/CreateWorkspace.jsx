@@ -5,25 +5,42 @@ import ModalBg1 from "../../../public/ModalBg1.svg";
 import ModalBg2 from "../../../public/ModalBg2.svg";
 
 const CreateWorkspace = ({setShowModal}) => {
-    const [input,setInput] = useState({workspaceName:"",workspaceid:""});
-    const [flag, setFlag] = useState(false);
+    const [input,setInput] = useState({workspaceName:"",workspaceDescription:"",workspaceid:""});
+    const [flag, setFlag] = useState({currentField:"workspaceName",next:{currentField:"workspaceDescription",next:{currentField:"workspaceid"}}});
 
     const changeHandler=(inputField,text)=>
     {
         setInput(prev=>({...prev,[inputField]:text}));
     }
 
+    const textPicker = (currentField)=>
+    {
+        switch(currentField)
+        {
+            case "workspaceName":
+                return "Enter a Workspace Name";
+
+            case "workspaceDescription":
+                return "Enter a Workspace Description";
+
+            case "workspaceid":
+                return "Enter a Workspace ID";
+        }
+    }
+
     const clickHandler=()=>
     {
-        if(flag)
+        if(flag.next)
         {
-
-
-            // Enter the actual function here to call workspace api
-            console.log(input);
-            setShowModal(false);
+            setFlag(flag.next);
         }
-        setFlag(true);
+        else
+        {
+            // Enter actual function to call create workspace API
+        console.log(input);
+        setShowModal(false);
+        }
+        
     }
 
   return (
@@ -41,14 +58,14 @@ const CreateWorkspace = ({setShowModal}) => {
             <h1 className='text-2xl font-semibold -mt-5'>Create a Workspace</h1>
             <p className='text-[#525252] text-[19px] mt-3 mb-6'>Start creating a workspace to manage your teams</p>
             <input className='py-3 px-2.5 border border-[#DED2D9] rounded-md placeholder:text-xl w-[85%]'
-             placeholder={flag?'Enter a Workspace ID':'Enter a workspace name'}
-             value={flag?input.workspaceid:input.workspaceName}
-             onChange={(e)=>flag?changeHandler("workspaceid",e.target.value):changeHandler("workspaceName",e.target.value)}
+             placeholder={textPicker(flag.currentField)}
+             value={input[flag.currentField]}
+             onChange={(e)=>changeHandler(flag.currentField,e.target.value)}
             />
             <button className='bg-primary text-white text-xl py-4 mt-5 w-[85%] rounded-full hover:shadow-sm hover:shadow-primary disabled:brightness-75 disabled:hover:cursor-not-allowed'
-             disabled={flag?input.workspaceid==="":input.workspaceName===""}
+             disabled={input[flag.currentField]===""}
              onClick={clickHandler}>
-                {flag?"Create Workspace":"Next"}
+                {flag.next?"Next":"Create Workspace"}
             </button>
         </main>
     </div>
