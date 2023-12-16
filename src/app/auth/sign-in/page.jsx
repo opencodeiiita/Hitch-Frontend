@@ -1,5 +1,34 @@
 'use client'
 import React, { useState } from 'react';
+import styled, { css } from "styled-components";
+
+const Checkbox = styled.input`
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #828282;
+  border-radius: 3px;
+  outline: none;
+  margin-right: 6px;
+  position: relative;
+
+  &:checked {
+    background-color: #390A75; // Change this to your desired color
+    border: 1px solid #390A75; // Change this to your desired color
+  }
+
+  &:checked::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+`;
 
 const SignInPage = () => {
   const [email, setEmail] = useState('');
@@ -36,6 +65,11 @@ const SignInPage = () => {
       alert('Password must be at least 8 characters and include letters, numbers, and symbols');
       return;
     }
+
+    console.log({
+      Email: email,
+      Password: password
+    })
   };
 
   return (
@@ -46,7 +80,7 @@ const SignInPage = () => {
       <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
         <div className='text-center w-4/5'>
           <div className='flex items-center mb-4'>
-            <img src='/logo.png' alt='Company Logo' className='h-16 w-16 mx-2 mb-2' />
+            <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />
 
             <p style={{color: "#390A75"}} className='mb-0 font-bold text-2xl md:text-3xl lg:text-4xl'>Hitch</p>
           </div>
@@ -71,7 +105,7 @@ const SignInPage = () => {
                 type='email'
                 id='email'
                 placeholder='Enter your email'
-                className='rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
+                className='focus:outline-none focus:border rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
                 value={email}
                 onChange={handleEmailChange}
               />
@@ -82,13 +116,13 @@ const SignInPage = () => {
                 type='password'
                 id='password'
                 placeholder='Enter your password'
-                className='rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
+                className='focus:outline-none focus:border rounded-md border p-2 w-full text-xs md:text-sm lg:text-base'
                 value={password}
                 onChange={handlePasswordChange}
               />
             </div>
             <div className='flex items-center mb-4'>
-              <input type='checkbox' className='mr-2' />
+              <Checkbox type='checkbox' className='mr-2' />
               <span style={{color: "#A1A1A1"}} className='text-xs md:text-sm lg:text-base'>Remember me</span>
               <a href='/' style={{color: "#390A75"}} className='ml-auto font-bold text-xs md:text-sm lg:text-base'>Forgot Password?</a>
             </div>
