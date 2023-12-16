@@ -15,7 +15,7 @@ export default function page () {
                 <svg className='mt-5' xmlns="http://www.w3.org/2000/svg" width="487" height="34" viewBox="0 0 487 34" fill="none">
                     <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#390A75" stroke-width="8" stroke-linecap="round"/>
                 </svg>
-                <p className='text-lg font-medium max-w-md mt-10'>Let's make your work more organize and easily using the Taskio Dashboard with many of the latest features in managing work every day.</p>
+                <p className='text-lg font-medium max-w-md mt-10'>Let&apos;s make your work more organize and easily using the Taskio Dashboard with many of the latest features in managing work every day.</p>
                 <aside className='flex items-center mt-10 space-x-10'>
                     <button className='text-white text-lg font-medium bg-primary py-5 px-7 rounded-full hover:shadow-sm hover:shadow-primary-dark'>Try free trial</button>
                     <button className='flex items-center space-x-3 hover:text-primary'>
