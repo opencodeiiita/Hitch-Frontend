@@ -1,6 +1,4 @@
 [
-
-
     {
         "name": "Kushal Bansal",
         "githubid": "kushal7201",
@@ -14,72 +12,67 @@
     {
         "name": "Sanjay Paul",
         "githubid": "rebornstar1",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Harshal Gainer",
         "githubid": "Harshal5167",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Naramala siva venkata pavan",
         "githubid": "NSVPavan",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Aryan Raj",
         "githubid": "Aryan4884",
-        "college" : "IIT,BHU"
+        "college": "IIT,BHU"
     },
     {
         "name": "Govinda Rohith",
         "githubid": "GovindaRohith",
-        "college" : "IITH"
+        "college": "IITH"
     },
     {
-
-      "name": "Shaurya Jain",
-      "githubid": "ShauryaJain03",
-      "college": "IIITA"
+        "name": "Shaurya Jain",
+        "githubid": "ShauryaJain03",
+        "college": "IIITA"
     },
     {
-
         "name": "Tejas Sharma",
-        "githubid":"Tej-as1",
-        "college":"IIITA"
+        "githubid": "Tej-as1",
+        "college": "IIITA"
     },
     {
-
         "name": "Nitu Sherawat",
-        "githubid":"Nitu-Sherawat",
-        "college":"IIITA"
+        "githubid": "Nitu-Sherawat",
+        "college": "IIITA"
     },
-     {
-
+    {
         "name": "Pranav Bansal",
         "githubid": "PranavBansal21",
         "college": "IIITA"
-     },
-     {
-
+    },
+    {
         "name": "Shrutika Rathi",
         "githubid": "shrutikarathi6",
         "college": "IIITA"
-     },
+    },
     {
         "name": "Atharva Chavan",
         "githubid": "atharva0192",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Anushka Pandit",
         "githubid": "anushkp1107",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Poonam Gate",
         "githubid": "PoonamGate",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Ajay Kumar",
@@ -89,92 +82,76 @@
     {
         "name": "Jai Khanna",
         "githubid": "CodinJack",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
-
     {
         "name": "Aditya Arya",
         "githubid": "arya-007",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
-
     {
         "name": "Buddhi Sagar Panjiyar",
         "githubid": "iam-buddhi",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
-    { 
+    {
         "name": "Parimal Amrutkar",
         "githubid": "parimal-10",
-        "college" : "IIITA"
-
+        "college": "IIITA"
     },
     {
         "name": "Ayush Sahu",
         "githubid": "Murdock9803",
-        "college" : "IIT(BHU)"
+        "college": "IIT(BHU)"
     },
     {
         "name": "Rudresh Dabre",
         "githubid": "Rudreshdabre12",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
         "name": "Sarthak Verma",
         "githubid": "sarthakvermaa",
-        "college" : "IIITA"
+        "college": "IIITA"
     },
     {
-     "name": "Vasu Singla",
+        "name": "Vasu Singla",
         "githubid": "vasusingla545",
         "college": "IIITA"
-
     },
     {
         "name": "Nandini Gupta",
         "githubid": "Nandinig24",
-        "college" : "IIITA"
-    }
+        "college": "IIITA"
+    },
     {
-     "name": "Deepanshu Kumar",
+        "name": "Deepanshu Kumar",
         "githubid": "dk414",
-        "college" : "IIITA"
-    },  
-
-
+        "college": "IIITA"
+    },
     {
         "name": "Swati Shah",
         "githubid": "shahswati098",
         "college": "IIITA"
-
     },
-
-    
     {
         "name": "Jay Sharma",
         "githubid": "Jaysharma100",
-        "college" : "IIITA"
-    }, 
-
+        "college": "IIITA"
+    },
     {
         "name": "Rohit Pandey",
         "githubid": "Rohit-110",
         "college": "IIITA"
-      
-    },{
-
-        "name": "Prakhar Shukla",
-        "githubid": "tonyStark-Jr",
-
-        "college": "IIITA"
-
     },
     {
-        "name":"Veerathu Sri Sindhu"
-        "githubid":"Sindhu194"
-        "college":"IIITA"
+        "name": "Prakhar Shukla",
+        "githubid": "tonyStark-Jr",
+        "college": "IIITA"
     },
-
-
-
+    {
+        "name": "Veerathu Sri Sindhu",
+        "githubid": "Sindhu194",
+        "college": "IIITA"
+    }
 ]
