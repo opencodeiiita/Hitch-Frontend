@@ -35,6 +35,11 @@
         "college": "IITH"
     },
     {
+        "name": "Ayush Sharma",
+        "githubid": "meAyushSharma",
+        "college": "BIET Jhansi"
+    },
+    {
         "name": "Shaurya Jain",
         "githubid": "ShauryaJain03",
         "college": "IIITA"
@@ -170,8 +175,17 @@
         "college": "IIITA"
     },
     {
+
+
+
+        "name": "Sushmitha Pothuraju",
+        "githubid": "imsushmitha-13",
+        "college": "IIITA"
+    },
+  {
         "name": "Navaneetha Krishnan R",
         "githubid": "rnavaneeth992",
         "college": "CEG"
+
     }
 ]
