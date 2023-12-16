@@ -48,7 +48,7 @@ const SignInPage = () => {
           <div className='flex items-center mb-4'>
             <img src='/logo.png' alt='Company Logo' className='h-16 w-16 mx-2 mb-2' />
 
-            <p style={{color: "#390A75"}} className='mb-0 font-bold text-lg md:text-xl lg:text-2xl'>Hitch</p>
+            <p style={{color: "#390A75"}} className='mb-0 font-bold text-2xl md:text-3xl lg:text-4xl'>Hitch</p>
           </div>
 
           <h1 style={{color: "#525252"}} className='text-xl md:text-2xl lg:text-3xl font-bold text-left'>Login to Your Account</h1>
