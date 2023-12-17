@@ -21,6 +21,15 @@
   justify-content: center;
   align-items: center;
 }
+
+@font-face {
+  font-family: inter;
+  src: url(/public/fonts/Inter-Regular.ttf);
+}
+
+.inter {
+  font-family: inter;
+}
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
