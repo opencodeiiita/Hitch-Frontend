@@ -1,6 +1,6 @@
 'use client'
-import React, { useState } from 'react';
-
+import * as React from "react";
+import { useState } from "react";
 const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,7 +19,6 @@ const SignInPage = () => {
   };
 
   const validatePassword = () => {
-    // Password should have at least 8 characters and contain a combination of letters, numbers, and symbols
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return passwordRegex.test(password);
   };
@@ -39,7 +38,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div className='flex md:flex-row h-screen'>
+   <div className='flex md:flex-row h-screen'>
       <div className='w-full md:w-1/2 bg-cover md:block hidden' style={{ backgroundImage: `url(/illustration.png)` }}>
       </div>
 
@@ -100,13 +99,12 @@ const SignInPage = () => {
             </button>
           </form>
 
-          {/* Not Registered Yet? */}
           <p className='text-xs md:text-sm lg:text-base'>
-            Not Registered Yet? <a href='/' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
+            Not Registered yet? <a href='/' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
           </p>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 

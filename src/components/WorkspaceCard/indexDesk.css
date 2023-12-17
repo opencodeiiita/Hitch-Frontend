@@ -1,0 +1,82 @@
+.button-div{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.but,.but:hover{
+    background-color: #390A75;
+    border-radius: 10px;
+}
+.buttext{
+    font-style: Inter;
+}
+.main-head{
+    font-style: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    width: 270px;
+    height: 24px;
+    margin-top:3px;
+}
+.avatars{
+    height: 30px;
+    width: 30px;
+    border-radius: 800px;
+    border: 1.5px;
+}
+.ext-box { 
+    margin-left: 15px;
+}
+.int-box { 
+    display: flex; 
+    flex-direction: column;
+    align-content: center; 
+}
+.num-mem{
+    font-style:Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+.box{
+    width:81px;
+    height:81px;
+    border-radius: 10px;
+    background-color: #ECE6F4;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+}
+.upper{
+    width: 71px;
+    height: 37px;
+    border-radius: 5px;
+    background-color: #FFC728;
+}
+.lower{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 71px;
+    height: 31px;
+    border-radius: 5px;
+}
+.box2{
+    height: 31px;
+    width: 33px;
+    background-color: #003255;
+    border-radius:5px;
+}
+.box3{
+    height: 31px;
+    width: 33px;
+    background-color: #2F1B5A;
+    border-radius:5px; 
+}
+.avatars-div{
+    display: flex;
+    margin-top: 12px;
+}
