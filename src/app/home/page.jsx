@@ -1,3 +1,4 @@
+
 "use client"
 import React, { useEffect, useState } from 'react'
 import CTA from '@/components/CTA/CTA.jsx';
@@ -53,3 +54,4 @@ export default function page() {
 
     )
 }
+
