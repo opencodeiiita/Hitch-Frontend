@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .bg-grid {
+      background: grid;
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(169, 169, 169, 0.2);
+    }
+
+    .bg-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-repeat: repeat;
+    }
+
+    h2 {
+      z-index: 10;
+      margin-bottom: 8px;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 1.875rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .text-card-foreground {
+      z-index: 10;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 0.75rem;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      padding: 2.125rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .p-33 {
+      margin-bottom: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #4a5568;
+    }
+
+    button {
+      margin-bottom: 8px;
+      padding: 0.75rem;
+      text-align: center;
+      width: 100%;
+      border: none;
+      border-radius: 0.375rem;
+      background-color: rgb(37 99 235);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: rgb(96 165 250);
+    }
+
+    .z-10 {
+      z-index: 10;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .space-x-5 {
+      margin-right: 1.25rem;
+    }
+
+    .text-gray-500 {
+      color: #a0aec0;
+    }
+
+    .text-gray-500:hover {
+      color: #718096;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .h-8 {
+      height: 2rem;
+    }
+
+    .w-8 {
+      width: 2rem;
+    }
+
+    .mt-5 {
+      margin-top: 1.25rem;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="bg-grid">
+  <div class="bg-grid-lines" aria-hidden="true"></div>
+  <h2 class="z-10 mb-8 pl-8 text-left text-3xl font-bold uppercase">HITCH</h2>
+  <br>
+  <div class="text-card-foreground z-10 w-full rounded-lg border border-gray-300 bg-white p-8 shadow-sm md:w-3/4 lg:w-2/3 xl:w-1/2" data-v0-t="card">
+    <div class="p-33 mb-5 flex flex-col space-y-1.5">
+      <h1 class="text-center text-2xl font-semibold">Verify this email address</h1>
+    </div>
+    <div class="mb-8 p-3 text-left">
+      <p class="text-lg text-gray-700 dark:text-gray-400">
+        Hi Apoorv,<br><br>
+        Welcome to Hitch,<br><br>
+        Please click the button below to verify your email address. You can ignore this message if you did not sign up for it. <br><br>
+      </p>
+    </div>
+    <button class="ring-offset-background focus-visible:ring-ring hover:bg-primary/90 inline-flex h-10 w-full items-center justify-center rounded-md bg-blue-600 px-4 py-3 text-lg font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">Verify email</button>
+  </div><div class="z-10 mt-8 flex">
+    <a class="text-gray-500 hover:text-gray-700 space-x-5" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+      </svg>
+    </a>
+    <a class="text-gray-500 hover:text-gray-700 space-x-5" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+      </svg>
+    </a>
+    <a class="text-gray-500 hover:text-gray-700" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+        <polyline points="10 17 15 12 10 7"></polyline>
+        <line x1="15" x2="3" y1="12" y2="12"></line>
+      </svg>
+    </a>
+  </div>
+  <p class="z-10 mt-5 text-lg text-gray-700 dark:text-gray-400">Hitch Support Team</p>
+  <br><br>
+</div>
+
+</body>
+</html>
+Footer

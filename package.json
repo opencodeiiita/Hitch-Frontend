@@ -10,9 +10,15 @@
   },
   "dependencies": {
     "next": "14.0.3",
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive": "^9.0.2"
+=======
+    "next-navigation": "^1.0.6",
+    "react": "^18",
+    "react-dom": "^18"
+>>>>>>> 17bbfbf6115fe54a0d1d6d2d41c00b7d15c1896b
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
