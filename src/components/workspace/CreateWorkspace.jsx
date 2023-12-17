@@ -45,7 +45,7 @@ const CreateWorkspace = ({setShowModal}) => {
 
   return (
     <div className='fixed bg-black/30 w-screen h-screen z-40 top-0 flex justify-center items-center'>
-        <main className='relative flex flex-col items-center bg-white  min-h-1/2 max-h-max max-w-max rounded-lg shadow-lg pt-7 pl-5 pr-7 pb-14'>
+        <main className='relative flex flex-col items-center bg-white  min-h-1/2 max-h-max max-w-max rounded-lg shadow-lg pt-7 pl-5 pr-7 pb-14 max-sm:h-screen max-sm:justify-center'>
             <svg className="w-6 h-6 absolute right-5 top-5 hover:text-red-500 hover:cursor-pointer" onClick={()=>setShowModal(false)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -93,7 +93,7 @@ const CreateWorkspace = ({setShowModal}) => {
             </section>
             <section className='w-11/12 flex justify-between mt-6'>
                 <p className={`${flag.currentField==="workspaceName"?"text-text":"text-primary"} font-medium`}>Add Name</p>
-                <p className={`${flag.currentField!=="workspaceid"?"text-text":"text-primary"} font-medium -ml-3`}>Enter id</p>
+                <p className={`${flag.currentField!=="workspaceid"?"text-text":"text-primary"} font-medium -ml-3`}>Description</p>
                 <p className={`text-text font-medium`}>Create!</p>
             </section>
         </main>
