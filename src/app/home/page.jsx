@@ -1,11 +1,10 @@
-
 "use client"
 import React, { useEffect, useState } from 'react'
 import CTA from '@/components/CTA/CTA.jsx';
 import HeroSection from '@/components/HeroSection.jsx';
 
 import ScrollTrigger from 'react-scroll-trigger';
-import Navbar from '@/components/navbar/NavBar';
+import Navbar from '@/components/navbar/Navbar';
 export default function page() {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 641);
     const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +32,7 @@ export default function page() {
                 {console.log(isVisible)}
                 {isVisible ? (
                     <>
-                    {isSmallScreen ? (<Navbar hitchColor="text-primary" displayType='fixed' navbarBg='bg-white' navbarShadow='shadow-md' itemColor='text-white' itemColorOnHover="text-white" sideButtonColor='black' roundedDepth='rounded-0' />
+                    {isSmallScreen ? (<Navbar hitchColor="text-primary" dropDownBg="bg-white" displayType='fixed' navbarBg='bg-white' navbarShadow='shadow-md' itemColor='text-primary' itemColorOnHover="hover:text-white" sideButtonColor='black' roundedDepth='rounded-0' />
                     ) : (<Navbar displayType='fixed' navbarBg='bg-white' navbarShadow='shadow-md' hitchColor="text-primary" itemColor='text-text' itemColorOnHover='hover:text-black' />
                     )}
                 </>
@@ -54,4 +53,3 @@ export default function page() {
 
     )
 }
-
