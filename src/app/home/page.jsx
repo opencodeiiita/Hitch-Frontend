@@ -7,6 +7,7 @@ import Footer from '@/components/footer/Footer';
 
 export default function page () {
   return (
+    
     <div className=' overflow-x-hidden z-20'>
         <NavBar />
         <section className='flex mr-4 mt-32 ml-32 py-12 min-h-screen'>
