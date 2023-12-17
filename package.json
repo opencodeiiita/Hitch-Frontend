@@ -9,16 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "antd": "^5.12.2",
+    "gsap": "^3.12.4",
     "next": "14.0.3",
-<<<<<<< HEAD
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-responsive": "^9.0.2"
-=======
     "next-navigation": "^1.0.6",
     "react": "^18",
-    "react-dom": "^18"
->>>>>>> 17bbfbf6115fe54a0d1d6d2d41c00b7d15c1896b
+    "react-dom": "^18",
+    "react-scroll-trigger": "^0.6.14",
+    "tailwindcss-animated": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

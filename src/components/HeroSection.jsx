@@ -25,7 +25,7 @@ const HeroSection = () => {
             {isSmallScreen ? (
                 <section className='my-8 items-center'>
 
-                    <Image src={mobileHeroSection} alt="Hitch Overview" className=' mx-20 my-8 w-[60vw]' />
+                    <Image src={mobileHeroSection} alt="Hitch Overview" className=' mx-20 my-8 mt-16 w-[60vw]' />
                     <section className='ml-[32px] mr-[16px] space-y-6 flex flex-col items-start h-fit'>
 
                         <text className=' font-bold text-[42px] leading-[49px] text-white'>
@@ -57,7 +57,7 @@ const HeroSection = () => {
                     </section>
                     <aside className='absolute bg-[#1B1633] w-full h-[120vh] top-0 left-0 -z-20'>
                     </aside>
-                    <aside className='absolute w-[73vw] h-[73vw] bg-[#8A2FFF] -top-[20vw] -left-[20vw]  blur-[140px] -z-10'>
+                    <aside className='absolute w-[73vw] h-[73vw] bg-[#8A2FFF] -top-[20vw] -left-[20vw]  blur-[180px] -z-10'>
 
                     </aside>
 
@@ -66,9 +66,10 @@ const HeroSection = () => {
                 </section>
 
             ) : (
-                <section className='flex mr-4 mt-32 ml-32 py-12 min-h-screen'>
+                <section className='flex flex-col-reverse lg:flex lg:flex-row mr-4 mt-16 ml-32 py-12 w-screen min-h-screen'>
                     <section className='flex flex-col z-10 '>
-                        <p className='text-[80px] leading-[90px] font-bold'>Connecting Ideas, Powering Teamwork.</p>
+                        <p className='flex-shrink text-[80px] leading-[90px] font-bold'>Connecting <br>
+                        </br>Ideas, Powering <br></br>Teamwork.</p>
                         <svg className='mt-5' xmlns="http://www.w3.org/2000/svg" width="487" height="34" viewBox="0 0 487 34" fill="none">
                             <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#390A75" stroke-width="8" stroke-linecap="round" />
                         </svg>
@@ -84,7 +85,7 @@ const HeroSection = () => {
                             </button>
                         </aside>
                     </section>
-                    <Image src={landingPagePoster} alt="Hitch Overview" className='h-[526px]' />
+                    <Image src={landingPagePoster} alt="Hitch Overview" className='flex lg:mb-0 mb-24 h-[526px]' />
                     {/* For blur effect */}
                     <aside className='absolute overflow-x-hidden w-[99vw] h-[90vh] top-0 left-0 bg-gradient-to-r from-primary/20 to-white blur-2xl -z-20'></aside>
                     <aside className='absolute w-96 h-96 rounded-full bg-white top-1/3 right-1/3 blur-3xl -z-10'></aside>
