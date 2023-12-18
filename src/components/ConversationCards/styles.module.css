@@ -1,0 +1,6 @@
+.markup svg:hover path {
+  stroke: black;
+}
+.markup svg {
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
-'use client'
-import RigthSignUp from '@/components/right/RigthSignUp';
-import React, { useState } from 'react';
+"use client";
+import RigthSignUp from "@/components/right/RigthSignUp";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 const Checkbox = styled.input`
@@ -14,12 +14,12 @@ const Checkbox = styled.input`
   position: relative;
 
   &:checked {
-    background-color: #390A75; // Change this to your desired color
-    border: 1px solid #390A75; // Change this to your desired color
+    background-color: #390a75; // Change this to your desired color
+    border: 1px solid #390a75; // Change this to your desired color
   }
 
   &:checked::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 4px;
     top: 1px;
@@ -31,12 +31,11 @@ const Checkbox = styled.input`
   }
 `;
 
-
-const signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [name, setName] = useState('');
+const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -49,7 +48,7 @@ const signup = () => {
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
-  
+
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -61,7 +60,8 @@ const signup = () => {
 
   const validatePassword = () => {
     // Password should have at least 8 characters and contain a combination of letters, numbers, and symbols
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return passwordRegex.test(password);
   };
 
@@ -79,22 +79,26 @@ const signup = () => {
     e.preventDefault();
 
     if (!validateEmail()) {
-      alert('Please enter a valid email address');
+      alert("Please enter a valid email address");
       return;
     }
 
     if (!validateName()) {
-      alert('Name must be at least 1 characters and include letters only');
+      alert("Name must be at least 1 characters and include letters only");
       return;
     }
 
     if (!validateUsername()) {
-      alert('UserName must be at least 1 characters and include letters, numbers');
+      alert(
+        "UserName must be at least 1 characters and include letters, numbers"
+      );
       return;
     }
 
     if (!validatePassword()) {
-      alert('Password must be at least 8 characters and include letters, numbers, and symbols');
+      alert(
+        "Password must be at least 8 characters and include letters, numbers, and symbols"
+      );
       return;
     }
 
@@ -102,17 +106,19 @@ const signup = () => {
       Email: email,
       Username: username,
       Name: name,
-      Password: password
-    })
+      Password: password,
+    });
   };
 
   return (
-    <div className='flex md:flex-row'>
-      <div className='w-full md:w-1/2 bg-cover md:block hidden' style={{ backgroundImage: `url(/illustration.png)` }}>
-      </div>
-      <RigthSignUp/>
+    <div className="flex md:flex-row">
+      <div
+        className="w-full md:w-1/2 bg-cover md:block hidden"
+        style={{ backgroundImage: `url(/illustration.png)` }}
+      ></div>
+      <RigthSignUp />
     </div>
   );
-}
+};
 
 export default signup;
