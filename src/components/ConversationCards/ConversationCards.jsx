@@ -4,82 +4,79 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 
 const ConversationCards = () => {
-  const [texto, setTexto] = useState("");
+  const [text, settext] = useState("");
 
-  const cambiarTextoSeleccionado = (markup) => {
+  const changeSelectedText = (markup) => {
     const textarea = document.getElementById("miTextarea");
-    const inicioSeleccion = textarea.selectionStart;
-    const finSeleccion = textarea.selectionEnd;
+    const selectionStart = textarea.selectionStart;
+    const selectionEnd = textarea.selectionEnd;
 
-    const textoCompleto = textarea.value;
-    let textoSeleccionado = textoCompleto.substring(
-      inicioSeleccion,
-      finSeleccion
-    );
+    const textFull = textarea.value;
+    let selectedText = textFull.substring(selectionStart, selectionEnd);
 
-    let nuevoTexto; // Puedes cambiar esto con el texto que desees
+    let newText;
     switch (markup) {
       case "bold":
-        if (textoSeleccionado === "") textoSeleccionado = "text";
+        if (selectedText === "") selectedText = "text";
 
-        nuevoTexto = "**" + textoSeleccionado + "**";
+        newText = "**" + selectedText + "**";
         break;
       case "italic":
-        if (textoSeleccionado === "") textoSeleccionado = "text";
+        if (selectedText === "") selectedText = "text";
 
-        nuevoTexto = "*" + textoSeleccionado + "*";
+        newText = "*" + selectedText + "*";
         break;
       case "strikethrough":
-        if (textoSeleccionado === "") textoSeleccionado = "text";
+        if (selectedText === "") selectedText = "text";
 
-        nuevoTexto = "~~" + textoSeleccionado + "~~";
+        newText = "~~" + selectedText + "~~";
         break;
       case "link":
-        if (textoSeleccionado === "") textoSeleccionado = "text";
+        if (selectedText === "") selectedText = "text";
 
-        nuevoTexto = "[" + textoSeleccionado + "](https://)";
+        newText = "[" + selectedText + "](https://)";
         break;
       case "ordered list":
-        const lineasol = textoSeleccionado.split("\n");
-        let contadorLineasConTexto = 0;
+        const linesOl = selectedText.split("\n");
+        let lineCount = 0;
 
-        nuevoTexto = lineasol
-          .map((linea) => {
-            if (linea !== "") {
-              contadorLineasConTexto++;
-              return contadorLineasConTexto + "." + linea;
+        newText = linesOl
+          .map((line) => {
+            if (line !== "") {
+              lineCount++;
+              return lineCount + "." + line;
             }
           })
           .join("\n");
-        if (nuevoTexto === "") nuevoTexto = "\n1.Item List";
+        if (newText === "") newText = "\n1.Item List";
         break;
       case "unordered list":
-        const lineasul = textoSeleccionado.split("\n");
+        const linesul = selectedText.split("\n");
 
-        nuevoTexto = lineasul
-          .map((linea) => {
-            if (linea !== "") {
-              return "*" + linea;
+        newText = linesul
+          .map((line) => {
+            if (line !== "") {
+              return "*" + line;
             }
           })
           .join("\n");
-        if (nuevoTexto === "") nuevoTexto = "\n*Item List";
+        if (newText === "") newText = "\n*Item List";
 
         break;
       case "code":
-        if (textoSeleccionado === "") textoSeleccionado = "your code here";
+        if (selectedText === "") selectedText = "your code here";
 
-        nuevoTexto = "`" + textoSeleccionado + "`";
+        newText = "`" + selectedText + "`";
         break;
       default:
-        nuevoTexto = textoSeleccionado;
+        newText = selectedText;
     }
-    const textoModificado =
-      textoCompleto.substring(0, inicioSeleccion) +
-      nuevoTexto +
-      textoCompleto.substring(finSeleccion);
+    const changedText =
+      textFull.substring(0, selectionStart) +
+      newText +
+      textFull.substring(selectionEnd);
 
-    setTexto(textoModificado);
+    settext(changedText);
   };
 
   return (
@@ -258,7 +255,7 @@ const ConversationCards = () => {
         items-center gap-[1.5rem]`}
           >
             <svg
-              onClick={() => cambiarTextoSeleccionado("bold")}
+              onClick={() => changeSelectedText("bold")}
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -288,7 +285,7 @@ const ConversationCards = () => {
               />
             </svg>
             <svg
-              onClick={() => cambiarTextoSeleccionado("italic")}
+              onClick={() => changeSelectedText("italic")}
               width="20"
               height="18"
               viewBox="0 0 20 18"
@@ -304,7 +301,7 @@ const ConversationCards = () => {
               />
             </svg>
             <svg
-              onClick={() => cambiarTextoSeleccionado("strikethrough")}
+              onClick={() => changeSelectedText("strikethrough")}
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -328,7 +325,7 @@ const ConversationCards = () => {
             </svg>
             <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
             <svg
-              onClick={() => cambiarTextoSeleccionado("link")}
+              onClick={() => changeSelectedText("link")}
               width="17"
               height="18"
               viewBox="0 0 17 18"
@@ -352,7 +349,7 @@ const ConversationCards = () => {
             </svg>
             <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
             <svg
-              onClick={() => cambiarTextoSeleccionado("ordered list")}
+              onClick={() => changeSelectedText("ordered list")}
               width="17"
               height="21"
               viewBox="0 0 17 21"
@@ -384,7 +381,7 @@ const ConversationCards = () => {
               />
             </svg>
             <svg
-              onClick={() => cambiarTextoSeleccionado("unordered list")}
+              onClick={() => changeSelectedText("unordered list")}
               width="26"
               height="26"
               viewBox="0 0 26 26"
@@ -436,6 +433,7 @@ const ConversationCards = () => {
             </svg>
             <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
             <svg
+              onClick={() => changeSelectedText("code")}
               width="18"
               height="15"
               viewBox="0 0 18 15"
@@ -479,9 +477,9 @@ const ConversationCards = () => {
           </div>
           <div className="drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] bg-white rounded-[8px] justify-between flex flex-col">
             <textarea
-              value={texto}
+              value={text}
               id="miTextarea"
-              onChange={(e) => setTexto(e.target.value)}
+              onChange={(e) => settext(e.target.value)}
               placeholder="Message #design-hive"
               className="text-[black] outline-none rounded-t-[8px] font-[500] text-[0.938rem] text-[#27272766] p-[10px] resize-none"
             ></textarea>
