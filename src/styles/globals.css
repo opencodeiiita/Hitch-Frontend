@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,6 +22,16 @@
   justify-content: center;
   align-items: center;
 }
+
+@font-face {
+  font-family: inter;
+  src: url(/public/fonts/Inter-Regular.ttf);
+}
+
+.inter {
+  font-family: inter;
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
