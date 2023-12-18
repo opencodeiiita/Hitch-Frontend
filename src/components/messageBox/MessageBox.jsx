@@ -3,34 +3,39 @@ import Avatar from '@mui/material/Avatar';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-const ChatNotification = ({ username, time, message, userAvatar }) => {
+const ChatNotification = ({ username, time, message, userAvatar, timepassed }) => {
+
+
   return (
     <Paper
       elevation={3}
       style={{
         padding: '10px',
-        maxWidth: '1000px',
-        display: 'flex',
-        flexDirection: 'column', // Changed to column layout
-        alignItems: 'flex-start', // Adjusted alignment
+        maxWidth: '600px',
         margin: '10px',
-        borderRaddius : '50px',
+        borderRadius: '20px',
+        alignSelf: 'flex-end', 
       }}
     >
-      <Typography variant="subtitle1" color="black">
-        {username}
-      </Typography>
-      <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-        <Avatar alt="User Avatar" src={userAvatar} />
-        <div style={{ marginLeft: '10px', flexGrow: 1 }}>
-          <Typography>{message}</Typography>
+      <div style={{ display: 'flex', alignItems: 'center',flexDirection:'row'}}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Avatar alt="User Avatar" src={userAvatar} style={{ marginLeft: "15px" ,borderRadius: '10px', width: '40px', height: '40px' }} />
         </div>
-        <div style={{ marginLeft: '80px', marginBottom: '50px'}}>
-        <Typography variant="caption" color="textSecondary">
-          {time}
-        </Typography>
+        <div style={{display: 'flex', flexDirection: 'column' }}>
+          <div style={{display: 'flex', flexDirection: 'row' }}>
+            <Typography variant="subtitle1" color="black" style={{ fontWeight: 'bold', marginLeft: '10px' }}>
+              {username}
+            </Typography>
+            <Typography variant="caption" color="textSecondary"  style={{marginLeft: '10px', marginTop: '5px'}}>
+              {timepassed} min ago
+            </Typography>
+            <Typography variant="caption" color="textSecondary" style={{paddingLeft: "300px", marginTop: '5px'}}>
+            {time}
+          </Typography>
+          </div>
+          <Typography style={{marginLeft: '10px'}}>{message}</Typography>
         </div>
-      </div>
+        </div>
     </Paper>
   );
 };
