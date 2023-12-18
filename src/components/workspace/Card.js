@@ -1,5 +1,6 @@
 import React from 'react'
-
+import AvatarGroup from '@mui/material/AvatarGroup';
+import { Avatar } from '@mui/material';
 const Card = () => {
   return (
     <>
@@ -13,11 +14,24 @@ const Card = () => {
               The Palisadoes Foundation
 
               <div className='flex flex-row items-center justify-start my-1'>
-                <img src="./images/logo.svg"
-                  alt='logo'
-                  className='hidden sm:flex mr-2'
-                />
-                <text className='text-gray-400 text-sm font-semibold'>
+                <section className='hidden sm:flex'>
+
+               
+                <AvatarGroup
+                  max={7}
+                  
+                >
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/1.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/2.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/3.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/4.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/5.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/6.jpg" />
+                  <Avatar sx={{ width: 24, height: 24 }} alt="Remy Sharp" src="./images/7.jpg" />
+                  
+                </AvatarGroup>
+                </section>
+                <text className='sm:ml-2 text-gray-400 text-sm font-semibold'>
                   1,423 members
                 </text>
               </div>
@@ -30,7 +44,7 @@ const Card = () => {
         <button className='flex sm:hidden w-full justify-center bg-[#390A75] text-md sm:text-xl sm:font-semibold text-white rounded-md mx-8 py-3 mt-2 '>
           LAUNCH HITCH
         </button>
-        
+
 
       </div>
 
