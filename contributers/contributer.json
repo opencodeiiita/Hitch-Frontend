@@ -187,11 +187,45 @@
         "githubid": "rnavaneeth992",
         "college": "CEG"
 
-    }
+    },
 
     {
   "name": "Shweta Pandey",
   "githubid": "Shweta-1902",
   "college": "IIITA"
-}
+
+
+    },
+    {
+         "name": "Nilesh Chaubey",
+        "githubid": "nilesh9758",
+        "college": "IIITA"
+    },
+    {
+        "name": "Abhishek Kumat",
+       "githubid": "abhi5h6k",
+       "college": "IIITA"
+   },
+
+   {
+        "name": "Akshat Joshi",
+       "githubid": "Aj9630747827",
+     "college": "IIITA"
+  
+   },
+    {
+        "name": "Aditya Khairnar",
+       "githubid": "k7aditya",
+
+       "college": "IIITA"
+   },
+
+  {
+      "name": "Aditi Gupta",
+     "githubid": "AditiGupta976",
+     "college" : "IIITA"
+  }
+
+   
+
 ]
