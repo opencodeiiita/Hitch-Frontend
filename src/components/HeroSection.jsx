@@ -58,7 +58,6 @@ const HeroSection = () => {
                     <aside className='absolute bg-[#1B1633] w-full h-[120vh] top-0 left-0 -z-20'>
                     </aside>
                     <aside className='absolute w-[73vw] h-[73vw] bg-[#8A2FFF] -top-[20vw] -left-[20vw]  blur-[180px] -z-10'>
-
                     </aside>
 
 
