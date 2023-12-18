@@ -13,7 +13,7 @@ const ChatNotification = ({ username, time, message, userAvatar, timepassed }) =
         padding: '10px',
         maxWidth: '600px',
         margin: '10px',
-        borderRadius: '20px',
+        borderRadius: '15px',
         alignSelf: 'flex-end', 
       }}
     >
