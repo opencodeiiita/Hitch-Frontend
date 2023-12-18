@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import CreateWorkspace from '@/components/workspace/CreateWorkspace';
 
-export default function page () 
+export default function Page () 
 {
     const [showModal,setShowModal] = useState(false);
     return (
