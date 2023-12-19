@@ -91,13 +91,15 @@ const ConversationCards = () => {
 
   return (
     <div
-      className="border-[6px] border-white border bg-white m-auto flex flex-col w-[100%] 
-      min-h-[100vh] rounded-[8px] justify-between overflow-hidden"
+      className="w-[100%] border-[6px] border-white border bg-white m-auto flex flex-col sm:w-[65%] 
+      h-[100vh] rounded-[8px] justify-between overflow-hidden"
     >
-      <div className="min-h-[118px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[8px] gap-[13px] flex flex-col">
-        <div className=" gap-x-[1rem] flex-wrap justify-between gap-y-[1rem] min-h-[40px] flex items-center">
-          <div className="max-w-[480px] h-[18px] flex items-center gap-2">
-            <p className="font-bold	text-[1.25rem]">#design-hive</p>
+      <div className="min-h-[118px] max-[732px]:p-[12px_12px_8px_12px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[8px] gap-[13px] flex flex-col">
+        <div className="flex-wrap justify-between gap-y-[1rem] min-h-[40px] flex items-center">
+          <div className="max-w-[480px]  h-[18px] flex items-center gap-2">
+            <p className="font-bold max-[732px]:text-[1rem]	text-[1.25rem]">
+              #design-hive
+            </p>
             <svg
               width="18"
               height="18"
@@ -113,24 +115,27 @@ const ConversationCards = () => {
               />
             </svg>
           </div>
-          <div className="h-[39px] max-w-[17.563rem] w-full justify-between flex">
-            <div className="h-[39px] bg-white rounded-[8px] flex justify-center items-center gap-[3px] px-[8px]">
+          <div className="h-[39px] max-[732px]:h-[28px] max-[732px]:gap-[.5rem] gap-[1rem] flex">
+            <div
+              className="h-[100%] bg-white
+              max-[732px]:p-[4px]  rounded-[8px] flex justify-center items-center gap-[3px] p-[6px]"
+            >
               <Image
-                className="rounded-[4px]"
+                className="rounded-[4px] w-auto h-full"
                 alt="maria"
                 src="/image 12.png"
                 height={28}
                 width={28}
               />
               <Image
-                className="rounded-[4px]"
+                className="rounded-[4px] w-auto h-full"
                 alt="julia"
                 src="/image 13.png"
                 height={28}
                 width={28}
               />
               <Image
-                className="rounded-[4px]"
+                className="rounded-[4px] w-auto h-full"
                 alt="katherine"
                 src="/image 14.png"
                 height={28}
@@ -138,8 +143,12 @@ const ConversationCards = () => {
               />
               <p className="ml-[2px] text-[#60605F] font-[600]">4</p>
             </div>
-            <div className="w-[82px] h-[39px] bg-white rounded-[8px] flex justify-between items-center gap-[4px] p-[8px]">
+            <div
+              className="gap-[.55rem] h-[100%] max-[732px]:px-[4px] bg-white rounded-[8px]
+            flex  items-center gap-[4px] px-[6px] py-[6px]"
+            >
               <svg
+                className="h-[30px]  max-[732px]:h-[22px] w-auto"
                 width="34"
                 height="34"
                 viewBox="0 0 34 34"
@@ -183,8 +192,9 @@ const ConversationCards = () => {
                 />
               </svg>
             </div>
-            <div className="bg-white rounded-[8px] flex justify-between items-center p-[8px]">
+            <div className="bg-white h-[100%] rounded-[8px] flex justify-between items-center p-[8px]">
               <svg
+                className="h-full w-auto"
                 width="22"
                 height="20"
                 viewBox="0 0 22 20"
@@ -260,11 +270,13 @@ const ConversationCards = () => {
           </div>
         </div>
       </div>
-      {/* Message Component */}
-      <MessageBox /> <MessageBox />
-      <MessageBox />
-      <MessageBox />
-      <div className="min-h-[155px] max-w-[46rem] w-[95%] m-auto mb-[24px]">
+      <div className="overflow-y-scroll">
+        {/* Message Component */}
+        <MessageBox /> <MessageBox />
+        <MessageBox />
+        <MessageBox />
+      </div>
+      <div className="w-[95%] m-auto mb-[16px]">
         <div
           className={`${styles.markup} mx-[5px] bg-[#f8f8f8] rounded-t-[8px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] 
             min-h-[48px] px-[18px] py-[14px] flex items-center flex-wrap gap-[1.5rem]`}

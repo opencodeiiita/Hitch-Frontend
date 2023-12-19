@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 const ChatNotification = ({
   username = "test",
   time = "12:30 PM",
-  message = "d",
+  message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   userAvatar,
   timepassed = "30",
 }) => {
@@ -79,7 +79,7 @@ const ChatNotification = ({
             style={{
               wordBreak: "break-word",
               minHeight: "24px",
-              marginLeft: "10px",
+              padding: "0 10px",
               width: "100%",
             }}
           >
