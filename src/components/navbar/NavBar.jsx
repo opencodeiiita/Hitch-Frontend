@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
+import CreateWorkspace from '../workspace/CreateWorkspace';
 const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn = false, roundedDepth = "rounded-full", hitchColor = "bg-primary", displayType = "fixed", navbarBg = "bg-white", navbarShadow = "shadow-md", itemColor = "text-text", itemColorOnHover = "text-black", signUpBg = "bg-primary" }) => {
   let Links = [
     { name: "Home", link: "/" },
@@ -11,6 +12,7 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
     { name: "About Us", link: "/" },
   ];
   let [open, setOpen] = useState(false);
+  const [showModal,setShowModal] = useState(false);
   const router = useRouter()
 
     const handleLoginClick = () => {
@@ -20,6 +22,8 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
         router.push('/auth/sign-up');
     };
   return (
+    <>
+    {showModal && <CreateWorkspace setShowModal={setShowModal} />}
     <div className={`w-full ${displayType} top-0 left-0 font-inter z-50`}>
       <div className={` animate lg:flex items-center justify-between ${navbarBg} ${roundedDepth} py-3 lg:py-1 lg:my-2 lg:px-10 px-3 lg:mx-14  ${navbarShadow}`} >
 
@@ -47,7 +51,7 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
           {!open ? (
             <>
               {isSignIn ? (
-                <button className={`btn ${signUpBg} text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}>Create Workspace</button>
+                <button onClick={()=>setShowModal(true)} className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}>Create Workspace</button>
               ) : (
                 <>
                   <button  onClick={handleLoginClick} className={`btn  ${itemColor} ${itemColorOnHover}  hover:text-[#000000] hover:font-semibold hover:duration-0  text-text lg:ml-28  px-3 py-1 rounded duration-500 lg:static `}>Login</button>
@@ -62,6 +66,7 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
 
       </div>
     </div >
+    </>
   );
 };
 
