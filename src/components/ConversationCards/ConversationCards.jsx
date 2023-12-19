@@ -10,7 +10,6 @@ const ConversationCards = () => {
     const textarea = document.getElementById("miTextarea");
     const selectionStart = textarea.selectionStart;
     const selectionEnd = textarea.selectionEnd;
-
     const textFull = textarea.value;
     let selectedText = textFull.substring(selectionStart, selectionEnd);
 
@@ -81,10 +80,13 @@ const ConversationCards = () => {
 
   return (
     <div className="bg-[#571F6A] p-8">
-      <div className="border-[6px] border-white border bg-white m-auto flex flex-col max-w-[784px] w-[95%] min-h-[464px] rounded-[8px] justify-between overflow-hidden">
-        <div className="h-[118px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[8px] gap-[13px] flex flex-col">
-          <div className="w-[736px] h-[40px] flex items-center">
-            <div className="w-[480px] h-[18px] flex items-center gap-2">
+      <div
+        className="border-[6px] border-white border bg-white m-auto flex flex-col max-w-[784px] w-[100%] 
+      min-h-[464px] rounded-[8px] justify-between overflow-hidden"
+      >
+        <div className="min-h-[118px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[8px] gap-[13px] flex flex-col">
+          <div className="max-w-[736px] gap-x-[1rem] flex-wrap justify-between gap-y-[1rem] min-h-[40px] flex items-center">
+            <div className="max-w-[480px] h-[18px] flex items-center gap-2">
               <p className="font-bold	text-[1.25rem]">#design-hive</p>
               <svg
                 width="18"
@@ -101,7 +103,7 @@ const ConversationCards = () => {
                 />
               </svg>
             </div>
-            <div className="h-[39px] flex gap-[1.25rem]">
+            <div className="h-[39px] max-w-[17.563rem] w-full justify-between flex">
               <div className="h-[39px] bg-white rounded-[8px] flex justify-center items-center gap-[3px] px-[8px]">
                 <Image
                   className="rounded-[4px]"
@@ -189,7 +191,7 @@ const ConversationCards = () => {
             </div>
           </div>
           <hr className="border-[#CCCCCC]" />
-          <div className="h-[24px] flex gap-[12px]">
+          <div className="h-[24px] max-w-[16rem] w-full justify-between flex">
             <div className="flex items-center px-[4px] gap-[4px] bg-[#F4F4F4] rounded-[8px]">
               <svg
                 width="16"
@@ -249,81 +251,82 @@ const ConversationCards = () => {
           </div>
         </div>
         {/* Message Component */}
-        <div className="h-[155px] px-[24px] mx-[24px] mb-[24px]">
+        <div className="min-h-[155px] max-w-[46rem] w-[95%] m-auto mb-[24px]">
           <div
-            className={`${styles.markup} mx-[5px] bg-[#f8f8f8] rounded-t-[8px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] h-[48px] px-[18px] py-[14px] flex
-        items-center gap-[1.5rem]`}
+            className={`${styles.markup} mx-[5px] bg-[#f8f8f8] rounded-t-[8px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] 
+            min-h-[48px] px-[18px] py-[14px] flex items-center flex-wrap gap-[1.5rem]`}
           >
-            <svg
-              onClick={() => changeSelectedText("bold")}
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.54248 2.78834H9.38853C9.80202 2.78742 10.2116 2.86818 10.5938 3.02599C10.976 3.18381 11.3233 3.41556 11.6157 3.70795C11.9081 4.00034 12.1398 4.3476 12.2976 4.7298C12.4554 5.112 12.5362 5.5216 12.5353 5.9351C12.5362 6.3486 12.4554 6.75821 12.2976 7.14041C12.1398 7.52261 11.9081 7.86987 11.6157 8.16226C11.3233 8.45465 10.976 8.6864 10.5938 8.84421C10.2116 9.00203 9.80202 9.08279 9.38853 9.08187H5.54248"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9.38853 9.08186H10.7871C11.2006 9.08093 11.6102 9.1617 11.9924 9.31951C12.3746 9.47732 12.7219 9.70908 13.0142 10.0015C13.3066 10.2939 13.5384 10.6411 13.6962 11.0233C13.854 11.4055 13.9348 11.8151 13.9339 12.2286C13.9348 12.6421 13.854 13.0517 13.6962 13.4339C13.5384 13.8161 13.3066 14.1634 13.0142 14.4558C12.7219 14.7482 12.3746 14.9799 11.9924 15.1377C11.6102 15.2955 11.2006 15.3763 10.7871 15.3754H5.54248"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M5.54248 15.3754V2.78833"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <svg
-              onClick={() => changeSelectedText("italic")}
-              width="20"
-              height="18"
-              viewBox="0 0 20 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.8835 2.78833H8.49903M10.8067 2.78833L8.49903 15.3754M11.5759 2.78833L9.26824 15.3754M11.5759 15.3754H6.19141"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <svg
-              onClick={() => changeSelectedText("strikethrough")}
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.4187 5.9351C13.4196 5.52161 13.3389 5.112 13.1811 4.7298C13.0233 4.3476 12.7915 4.00034 12.4991 3.70795C12.2067 3.41556 11.8595 3.18381 11.4773 3.02599C11.0951 2.86818 10.6855 2.78742 10.272 2.78834H7.87343C7.1186 2.78834 6.39469 3.08819 5.86095 3.62193C5.3272 4.15568 5.02735 4.87959 5.02735 5.63441C5.02843 6.23111 5.21656 6.81245 5.56528 7.29665C5.914 7.78084 6.40575 8.14351 6.97135 8.33364L11.4747 9.8301C12.0403 10.0202 12.5321 10.3829 12.8808 10.8671C13.2295 11.3513 13.4177 11.9326 13.4187 12.5293C13.4187 13.2842 13.1189 14.0081 12.5851 14.5418C12.0514 15.0755 11.3275 15.3754 10.5727 15.3754H8.17412C7.76062 15.3763 7.35101 15.2956 6.96881 15.1377C6.58661 14.9799 6.23935 14.7482 5.94696 14.4558C5.65457 14.1634 5.42282 13.8161 5.26501 13.4339C5.10719 13.0517 5.02643 12.6421 5.02735 12.2286"
-                stroke="#C8C9CA"
-                strokeWidth="1.39856"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2.9292 9.08185H15.5163"
-                stroke="#C8C9CA"
-                strokeWidth="1.39856"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
+            <div className="pr-[1.5rem] items-center flex gap-[1.5rem] h-[24px] border-r-[#CCCCCC] border-r-[1px]">
+              <svg
+                onClick={() => changeSelectedText("bold")}
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.54248 2.78834H9.38853C9.80202 2.78742 10.2116 2.86818 10.5938 3.02599C10.976 3.18381 11.3233 3.41556 11.6157 3.70795C11.9081 4.00034 12.1398 4.3476 12.2976 4.7298C12.4554 5.112 12.5362 5.5216 12.5353 5.9351C12.5362 6.3486 12.4554 6.75821 12.2976 7.14041C12.1398 7.52261 11.9081 7.86987 11.6157 8.16226C11.3233 8.45465 10.976 8.6864 10.5938 8.84421C10.2116 9.00203 9.80202 9.08279 9.38853 9.08187H5.54248"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9.38853 9.08186H10.7871C11.2006 9.08093 11.6102 9.1617 11.9924 9.31951C12.3746 9.47732 12.7219 9.70908 13.0142 10.0015C13.3066 10.2939 13.5384 10.6411 13.6962 11.0233C13.854 11.4055 13.9348 11.8151 13.9339 12.2286C13.9348 12.6421 13.854 13.0517 13.6962 13.4339C13.5384 13.8161 13.3066 14.1634 13.0142 14.4558C12.7219 14.7482 12.3746 14.9799 11.9924 15.1377C11.6102 15.2955 11.2006 15.3763 10.7871 15.3754H5.54248"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M5.54248 15.3754V2.78833"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <svg
+                onClick={() => changeSelectedText("italic")}
+                width="20"
+                height="18"
+                viewBox="0 0 20 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.8835 2.78833H8.49903M10.8067 2.78833L8.49903 15.3754M11.5759 2.78833L9.26824 15.3754M11.5759 15.3754H6.19141"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <svg
+                onClick={() => changeSelectedText("strikethrough")}
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.4187 5.9351C13.4196 5.52161 13.3389 5.112 13.1811 4.7298C13.0233 4.3476 12.7915 4.00034 12.4991 3.70795C12.2067 3.41556 11.8595 3.18381 11.4773 3.02599C11.0951 2.86818 10.6855 2.78742 10.272 2.78834H7.87343C7.1186 2.78834 6.39469 3.08819 5.86095 3.62193C5.3272 4.15568 5.02735 4.87959 5.02735 5.63441C5.02843 6.23111 5.21656 6.81245 5.56528 7.29665C5.914 7.78084 6.40575 8.14351 6.97135 8.33364L11.4747 9.8301C12.0403 10.0202 12.5321 10.3829 12.8808 10.8671C13.2295 11.3513 13.4177 11.9326 13.4187 12.5293C13.4187 13.2842 13.1189 14.0081 12.5851 14.5418C12.0514 15.0755 11.3275 15.3754 10.5727 15.3754H8.17412C7.76062 15.3763 7.35101 15.2956 6.96881 15.1377C6.58661 14.9799 6.23935 14.7482 5.94696 14.4558C5.65457 14.1634 5.42282 13.8161 5.26501 13.4339C5.10719 13.0517 5.02643 12.6421 5.02735 12.2286"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.39856"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2.9292 9.08185H15.5163"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.39856"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
             <svg
               onClick={() => changeSelectedText("link")}
               width="17"
@@ -347,77 +350,77 @@ const ConversationCards = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
-            <svg
-              onClick={() => changeSelectedText("ordered list")}
-              width="17"
-              height="21"
-              viewBox="0 0 17 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.38574 5.02136H16.1757"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-              />
-              <path
-                d="M6.38574 10.6157H16.1757"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-              />
-              <path
-                d="M6.38574 17.1423H16.1757"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-              />
-              <path
-                d="M3.12497 2.40096V7.82568H1.97804V3.48961H1.94626L0.703973 4.26836V3.25122L2.04691 2.40096H3.12497Z"
-                fill="#C8C9CA"
-              />
-              <path
-                d="M0.764895 18.0818V17.2554L2.69586 15.4675C2.86009 15.3086 2.99783 15.1655 3.10908 15.0384C3.22209 14.9112 3.30774 14.7868 3.36601 14.6649C3.42428 14.5413 3.45342 14.408 3.45342 14.2649C3.45342 14.106 3.41722 13.9692 3.34482 13.8544C3.27242 13.7378 3.17353 13.6487 3.04815 13.5868C2.92278 13.5233 2.78063 13.4915 2.6217 13.4915C2.45571 13.4915 2.31091 13.525 2.1873 13.5921C2.06369 13.6592 1.96833 13.7555 1.90123 13.8809C1.83412 14.0062 1.80057 14.1555 1.80057 14.3285H0.711919C0.711919 13.9736 0.792266 13.6654 0.952959 13.4041C1.11365 13.1427 1.3388 12.9405 1.6284 12.7975C1.918 12.6545 2.25175 12.583 2.62964 12.583C3.01813 12.583 3.3563 12.6518 3.64413 12.7896C3.93373 12.9255 4.15888 13.1145 4.31957 13.3564C4.48027 13.5983 4.56061 13.8756 4.56061 14.1881C4.56061 14.393 4.52 14.5952 4.43877 14.7947C4.35931 14.9942 4.21715 15.2159 4.01231 15.4595C3.80747 15.7015 3.51876 15.992 3.14616 16.331L2.35417 17.1071V17.1442H4.63213V18.0818H0.764895Z"
-                fill="#C8C9CA"
-              />
-            </svg>
-            <svg
-              onClick={() => changeSelectedText("unordered list")}
-              width="26"
-              height="26"
-              viewBox="0 0 26 26"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4.23877 6.32208H4.34414"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M4.23877 12.6157H4.34414"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M4.23877 18.9092H4.34414"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M10.0605 6.32208H22.6476M10.0605 12.6156H22.6476M10.0605 18.9091H22.6476"
-                stroke="#C8C9CA"
-                strokeWidth="1.86475"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
+            <div className="px-[1.5rem] items-center flex gap-[1.5rem] h-[24px] border-x-[#CCCCCC] border-x-[1px]">
+              <svg
+                onClick={() => changeSelectedText("ordered list")}
+                width="17"
+                height="21"
+                viewBox="0 0 17 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.38574 5.02136H16.1757"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                />
+                <path
+                  d="M6.38574 10.6157H16.1757"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                />
+                <path
+                  d="M6.38574 17.1423H16.1757"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                />
+                <path
+                  d="M3.12497 2.40096V7.82568H1.97804V3.48961H1.94626L0.703973 4.26836V3.25122L2.04691 2.40096H3.12497Z"
+                  fill="#C8C9CA"
+                />
+                <path
+                  d="M0.764895 18.0818V17.2554L2.69586 15.4675C2.86009 15.3086 2.99783 15.1655 3.10908 15.0384C3.22209 14.9112 3.30774 14.7868 3.36601 14.6649C3.42428 14.5413 3.45342 14.408 3.45342 14.2649C3.45342 14.106 3.41722 13.9692 3.34482 13.8544C3.27242 13.7378 3.17353 13.6487 3.04815 13.5868C2.92278 13.5233 2.78063 13.4915 2.6217 13.4915C2.45571 13.4915 2.31091 13.525 2.1873 13.5921C2.06369 13.6592 1.96833 13.7555 1.90123 13.8809C1.83412 14.0062 1.80057 14.1555 1.80057 14.3285H0.711919C0.711919 13.9736 0.792266 13.6654 0.952959 13.4041C1.11365 13.1427 1.3388 12.9405 1.6284 12.7975C1.918 12.6545 2.25175 12.583 2.62964 12.583C3.01813 12.583 3.3563 12.6518 3.64413 12.7896C3.93373 12.9255 4.15888 13.1145 4.31957 13.3564C4.48027 13.5983 4.56061 13.8756 4.56061 14.1881C4.56061 14.393 4.52 14.5952 4.43877 14.7947C4.35931 14.9942 4.21715 15.2159 4.01231 15.4595C3.80747 15.7015 3.51876 15.992 3.14616 16.331L2.35417 17.1071V17.1442H4.63213V18.0818H0.764895Z"
+                  fill="#C8C9CA"
+                />
+              </svg>
+              <svg
+                onClick={() => changeSelectedText("unordered list")}
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.23877 6.32208H4.34414"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M4.23877 12.6157H4.34414"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M4.23877 18.9092H4.34414"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M10.0605 6.32208H22.6476M10.0605 12.6156H22.6476M10.0605 18.9091H22.6476"
+                  stroke="#C8C9CA"
+                  strokeWidth="1.86475"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
             <svg
               width="16"
               height="15"
@@ -431,49 +434,50 @@ const ConversationCards = () => {
                 strokeWidth="1.86475"
               />
             </svg>
-            <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
-            <svg
-              onClick={() => changeSelectedText("code")}
-              width="18"
-              height="15"
-              viewBox="0 0 18 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.7685 0.622803L7.50514 14.1422M5.1742 2.95374L0.978516 7.14943L5.1742 11.3451"
-                stroke="#C8C9CA"
-                strokeWidth="0.932375"
-              />
-              <path
-                d="M13.0997 11.3451L17.2954 7.14941L13.0997 2.95372"
-                stroke="#C8C9CA"
-                strokeWidth="0.932375"
-              />
-            </svg>
-            <svg
-              width="18"
-              height="16"
-              viewBox="0 0 18 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.39428 6.2171L12.1914 3.88617L9.39428 1.55523"
-                stroke="#C8C9CA"
-                strokeWidth="0.932375"
-              />
-              <path
-                d="M3.80005 1.55524L1.00293 3.88617L3.80005 6.21711"
-                stroke="#C8C9CA"
-                strokeWidth="0.932375"
-              />
-              <path
-                d="M7.52943 0.156677L5.19849 7.14949M2.40137 9.94661V14.6085H16.8532V1.55524H13.1237"
-                stroke="#C8C9CA"
-                strokeWidth="0.932375"
-              />
-            </svg>
+            <div className="pl-[1.5rem] items-center flex gap-[1.5rem] h-[24px] min-[709px]:border-l-[#CCCCCC] border-l-[1px]">
+              <svg
+                onClick={() => changeSelectedText("code")}
+                width="18"
+                height="15"
+                viewBox="0 0 18 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.7685 0.622803L7.50514 14.1422M5.1742 2.95374L0.978516 7.14943L5.1742 11.3451"
+                  stroke="#C8C9CA"
+                  strokeWidth="0.932375"
+                />
+                <path
+                  d="M13.0997 11.3451L17.2954 7.14941L13.0997 2.95372"
+                  stroke="#C8C9CA"
+                  strokeWidth="0.932375"
+                />
+              </svg>
+              <svg
+                width="18"
+                height="16"
+                viewBox="0 0 18 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.39428 6.2171L12.1914 3.88617L9.39428 1.55523"
+                  stroke="#C8C9CA"
+                  strokeWidth="0.932375"
+                />
+                <path
+                  d="M3.80005 1.55524L1.00293 3.88617L3.80005 6.21711"
+                  stroke="#C8C9CA"
+                  strokeWidth="0.932375"
+                />
+                <path
+                  d="M7.52943 0.156677L5.19849 7.14949M2.40137 9.94661V14.6085H16.8532V1.55524H13.1237"
+                  stroke="#C8C9CA"
+                  strokeWidth="0.932375"
+                />
+              </svg>
+            </div>
           </div>
           <div className="drop-shadow-[0_0_2px_rgba(0,0,0,0.4)] bg-white rounded-[8px] justify-between flex flex-col">
             <textarea
@@ -484,7 +488,7 @@ const ConversationCards = () => {
               className="text-[black] outline-none rounded-t-[8px] font-[500] text-[0.938rem] text-[#27272766] p-[10px] resize-none"
             ></textarea>
             <div className="flex justify-between p-[8px]">
-              <div className="flex gap-[8px]  flex-row items-center">
+              <div className="flex flex-wrap gap-[8px]  flex-row items-center">
                 <svg
                   width="30"
                   height="31"
