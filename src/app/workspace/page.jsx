@@ -1,6 +1,6 @@
 "use client"
 import Footer from '@/components/footer/Footer';
-import NavBar from '@/components/navBar/NavBar';
+import NavBar from '@/components/navbar/NavBar';
 import Card from '@/components/workspace/Card.js'
 import CreateWorkspace from '@/components/workspace/CreateWorkspace';
 import Table from '@/components/workspace/Table';
@@ -62,7 +62,7 @@ const page = () => {
                         <Table/>
                         <Table buttonText='Joined'/>
                     </div>
-                    <aside className='absolute bg-[#1B1633] w-full h-[250vh] top-0 left-0 -z-20'>
+                    <aside className='absolute bg-[#1B1633] w-full h-[300vh] sm:h-[60vh] top-0 left-0 -z-20'>
                     </aside>
                     <aside className='absolute w-[73vw] h-[73vw] bg-[#8A2FFF]  -top-[20vw] -left-[20vw] sm:hidden blur-[180px] -z-10'>
                     </aside>

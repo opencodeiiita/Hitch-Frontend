@@ -4,7 +4,7 @@ import CTA from '@/components/CTA/CTA.jsx';
 import HeroSection from '@/components/HeroSection.jsx';
 
 import ScrollTrigger from 'react-scroll-trigger';
-import NavBar from '@/components/NavBar/NavBar';
+import NavBar from '@/components/navbar/NavBar';
 import Footer from '@/components/footer/Footer';
 export default function page() {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 641);
