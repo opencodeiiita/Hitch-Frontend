@@ -1,14 +1,16 @@
 "use client";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navbar/NavBar";
+import Image from "next/image";
+
 import Card from "@/components/workspace/Card.js";
 import CreateWorkspace from "@/components/workspace/CreateWorkspace";
 import Table from "@/components/workspace/Table";
 import { useState, useEffect } from "react";
 import React from "react";
 import ScrollTrigger from "react-scroll-trigger";
-const page = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 641);
+const Page = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   function onEnterViewport() {
     setIsVisible(false);
@@ -73,7 +75,7 @@ const page = () => {
             </button>
           </div>
           <div className="flex items-end justify-start  gap-3  mt-8 h-fit ">
-            <img src="./images/hand.svg" />
+            <Image alt="hand" height={48} width={48} src="./images/hand.svg" />
 
             <h className=" text-white font-semibold lg:text-5xl text-4xl">
               Welcome Back
@@ -90,3 +92,4 @@ const page = () => {
     </>
   );
 };
+export default Page;

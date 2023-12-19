@@ -2,7 +2,7 @@
 import RigthSignUp from "@/components/right/RigthSignUp";
 import React from "react";
 
-const signup = () => {
+const Signup = () => {
   return (
     <div className="flex md:flex-row">
       <div
