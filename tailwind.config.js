@@ -18,6 +18,11 @@ module.exports = {
         'text':'#A6A6A6',
       }
     },
+    fontFamily : {
+      inter: ["Inter", "sans-serif"],
+    },
+    
   },
   plugins: [],
 }
+
