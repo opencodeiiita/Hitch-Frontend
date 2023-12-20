@@ -94,8 +94,11 @@ const ConversationCards = () => {
       className="w-[100%] border-[6px] border-white border bg-white m-auto flex flex-col sm:w-[65%] 
       h-[100vh] rounded-[8px] justify-between overflow-hidden"
     >
-      <div className="min-h-[118px] max-[732px]:p-[12px_12px_8px_12px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[8px] gap-[13px] flex flex-col">
-        <div className="flex-wrap justify-between gap-y-[1rem] min-h-[40px] flex items-center">
+      <div
+        className="max-[732px]:p-[12px_12px_8px_12px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[16px]
+        max-[732px]:gap-[.75rem] gap-[1.3rem] flex flex-col"
+      >
+        <div className="flex-wrap justify-between gap-y-[1rem] flex items-center">
           <div className="max-w-[480px]  h-[18px] flex items-center gap-2">
             <p className="font-bold max-[732px]:text-[1rem]	text-[1.25rem]">
               #design-hive
@@ -211,9 +214,10 @@ const ConversationCards = () => {
           </div>
         </div>
         <hr className="border-[#CCCCCC]" />
-        <div className="h-[24px] max-w-[16rem] w-full justify-between flex">
+        <div className="gap-[1rem] max-[732px]:text-[.75rem] flex">
           <div className="flex items-center px-[4px] gap-[4px] bg-[#F4F4F4] rounded-[8px]">
             <svg
+              className="max-[732px]:h-[12px] w-auto"
               width="16"
               height="17"
               viewBox="0 0 16 17"
@@ -229,10 +233,11 @@ const ConversationCards = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="text-[.875rem] text-[#272727B2] font-[500]">
+            <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
               5 Pinned
             </p>
             <svg
+              className="max-[732px]:h-[12px] w-auto"
               width="16"
               height="16"
               viewBox="0 0 18 19"
@@ -249,6 +254,7 @@ const ConversationCards = () => {
           </div>
           <div className="flex items-center px-[4px] gap-[4px] text-[500]">
             <svg
+              className="max-[732px]:h-[14px] w-auto"
               width="16"
               height="17"
               viewBox="0 0 16 17"
@@ -264,13 +270,13 @@ const ConversationCards = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="text-[.875rem] text-[#272727B2] font-[500]">
+            <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
               Add a bookmark
             </p>
           </div>
         </div>
       </div>
-      <div className="overflow-y-scroll">
+      <div className={`${styles.scrollBar} overflow-y-scroll`}>
         {/* Message Component */}
         <MessageBox /> <MessageBox />
         <MessageBox />
@@ -281,7 +287,7 @@ const ConversationCards = () => {
           className={`${styles.markup} mx-[5px] bg-[#f8f8f8] rounded-t-[8px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] 
             min-h-[48px] px-[18px] py-[14px] flex items-center flex-wrap gap-[1.5rem]`}
         >
-          <div className="pr-[1.5rem] items-center flex gap-[1.5rem] h-[24px] border-r-[#CCCCCC] border-r-[1px]">
+          <div className="items-center flex gap-[1.5rem] h-[24px] border-r-[#CCCCCC] border-r-[1px]">
             <svg
               onClick={() => changeSelectedText("bold")}
               width="18"
@@ -351,6 +357,7 @@ const ConversationCards = () => {
                 strokeLinejoin="round"
               />
             </svg>
+            <div></div>
           </div>
           <svg
             onClick={() => changeSelectedText("link")}
@@ -375,7 +382,8 @@ const ConversationCards = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <div className="px-[1.5rem] items-center flex gap-[1.5rem] h-[24px] border-x-[#CCCCCC] border-x-[1px]">
+          <div className="items-center flex gap-[1.5rem] h-[24px] border-x-[#CCCCCC] border-x-[1px]">
+            <div></div>
             <svg
               onClick={() => changeSelectedText("ordered list")}
               width="17"
@@ -445,6 +453,7 @@ const ConversationCards = () => {
                 strokeLinejoin="round"
               />
             </svg>
+            <div></div>
           </div>
           <svg
             width="16"
@@ -459,7 +468,8 @@ const ConversationCards = () => {
               strokeWidth="1.86475"
             />
           </svg>
-          <div className="pl-[1.5rem] items-center flex gap-[1.5rem] h-[24px] min-[709px]:border-l-[#CCCCCC] border-l-[1px]">
+          <div className="items-center flex gap-[1.5rem] h-[24px] border-l-[#CCCCCC] border-l-[1px]">
+            <div></div>
             <svg
               onClick={() => changeSelectedText("code")}
               width="18"
