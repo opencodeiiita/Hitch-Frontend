@@ -161,8 +161,7 @@ const RigthSignUp = () => {
 
       // Navigate to the home page
       router.push('/home');
-
-      login();
+      
 
       // Handle successful registration, e.g., store token, redirect, etc.
       console.log('User registered successfully:', data);

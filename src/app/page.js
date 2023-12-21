@@ -1,7 +1,5 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export default function Home({}) {
-  return (
-   redirect('/auth/sign-in')
-  )
+  return redirect("/auth/sign-in");
 }
