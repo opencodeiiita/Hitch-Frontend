@@ -1,0 +1,46 @@
+.markup svg:hover path {
+  stroke: black;
+}
+.markup svg {
+  cursor: pointer;
+}
+.markup {
+  --markup-gap: 1.5rem;
+}
+@media (max-width: 845px) {
+  .markup {
+    --markup-gap: 1rem;
+  }
+}
+.markup {
+  gap: var(--markup-gap);
+}
+.markup div {
+  gap: var(--markup-gap);
+}
+
+@media (max-width: 423px) {
+  .markup {
+    --markup-gap: 0.65rem;
+  }
+  .markup svg {
+    height: 14px;
+    width: auto;
+  }
+}
+
+/* width */
+.scrollBar::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+  background: rgb(196, 195, 195);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollBar::-webkit-scrollbar-thumb:hover {
+  background: rgb(173, 173, 173);
+}
