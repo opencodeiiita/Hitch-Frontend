@@ -89,13 +89,21 @@ const NavBar = ({
             ))}
             {!open ? (
               <>
-                {isSignIn ? (
+                {isAuthenticated ? (
+                  <>
                   <button
                     onClick={() => setShowModal(true)}
                     className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}
                   >
                     Create Workspace
                   </button>
+                  <button
+                    onClick={handleLogoutClick}
+                    className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}
+                  >
+                    Logout
+                  </button>
+                  </>
                 ) : (
                   <>
                     <button
@@ -123,33 +131,6 @@ const NavBar = ({
             open ? <XMarkIcon color={`${sideButtonColor}`} /> : <Bars3Icon color={`${sideButtonColor}`} />
           }
         </div>
-
-        <ul className={`lg:flex lg:items-center lg:pb-0 pb-12 mt-2 lg:mt-0 absolute lg:static ${dropDownBg} lg:bg-transparent lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9  ${open ? 'top-15' : 'top-[-490px]'}`}>
-          {
-            Links.map((link) => (
-              <li className='lg:ml-8 lg:my-0 my-7 '>
-                <a href={link.link} className={`${itemColor} ${itemColorOnHover} hover:font-semibold hover:duration-0 duration-500`}>{link.name}</a>
-              </li>))
-          }
-          {!open ? (
-            <>
-              {isAuthenticated ? (
-                <>
-                <button onClick={()=>setShowModal(true)} className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}>Create Workspace</button>
-                <button onClick={handleLogoutClick} className={`btn ${itemColor} ${itemColorOnHover}  hover:text-[#000000] hover:font-semibold hover:duration-0  text-text lg:ml-28  px-3 py-1 rounded duration-500 lg:static `}>Logout</button>
-                </>
-              ) : (
-                <>
-                  <button  onClick={handleLoginClick} className={`btn  ${itemColor} ${itemColorOnHover}  hover:text-[#000000] hover:font-semibold hover:duration-0  text-text lg:ml-28  px-3 py-1 rounded duration-500 lg:static `}>Login</button>
-                  <button onClick={handleSignUpClick} className={`btn ${signUpBg} text-white lg:ml-3 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}>Sign Up</button>
-
-                </>
-              )}
-            </>
-          ) : (null)}
-
-        </ul>
-
       </div>
     </>
   );
