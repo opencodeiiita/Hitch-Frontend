@@ -1,5 +1,29 @@
 import React, { useState,useEffect } from 'react';
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { useRegisterUser } from '@/utils/api';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+`;
+
+const ModalContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
 
 const Checkbox = styled.input`
   appearance: none;
@@ -35,6 +59,7 @@ const RigthSignUp = () => {
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const { isAuthenticated, login, logout } = useAuth();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -80,7 +105,14 @@ const RigthSignUp = () => {
     return password === confirmPassword;
   };
 
-  const handleSubmit = (e) => {
+  const registerUserMutation = useRegisterUser();
+
+  const router = useRouter()
+
+  const [loadingOverlay, setLoadingOverlay] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateEmail()) {
@@ -114,6 +146,49 @@ const RigthSignUp = () => {
       Name: name,
       Password: password
     });
+
+    try {
+      setLoadingOverlay(true);
+      const { data } = await registerUserMutation.mutateAsync({
+        username,
+        password,
+        email,
+        name,
+      });
+
+      // Store the token in local storage
+      localStorage.setItem('token', data.token);
+
+      // Navigate to the home page
+      router.push('/home');
+
+      login();
+
+      // Handle successful registration, e.g., store token, redirect, etc.
+      console.log('User registered successfully:', data);
+      setModalContent({
+        type: 'success',
+        message: 'Registration successful!',
+      });
+    } catch (error) {
+      // Handle registration failure
+      console.log(error);
+        console.error('Registration error:', error.message);
+        setModalContent({
+          type: 'error',
+          message: error.message || 'An error occurred during registration.',
+        });
+    }
+    finally {
+      // Hide loading overlay after the mutation is complete
+      setLoadingOverlay(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalContent(null);
+    // Reset mutation state
+    registerUserMutation.reset();
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
@@ -134,6 +209,22 @@ const RigthSignUp = () => {
 
   return (
     <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
+      {loadingOverlay && (
+        <Overlay>
+          <p>Loading...</p>
+        </Overlay>
+      )}
+
+      {modalContent && (
+        <Overlay>
+          <ModalContent>
+            <p style={{ color: modalContent.type === 'success' ? 'green' : 'red' }}>
+              {modalContent.message}
+            </p>
+            <button onClick={closeModal}>OK</button>
+          </ModalContent>
+        </Overlay>
+      )}
       <div className='text-center w-4/5'>
         <div className='flex items-center mb-4'>
           <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />
@@ -219,7 +310,7 @@ const RigthSignUp = () => {
             onClick={handleSubmit}
             className='rounded-md mb-[20px] bg-purple-800 text-white px-2 md:px-4 py-1 md:py-2 w-full text-xs md:text-sm lg:text-base'
           >
-            Signup
+            {registerUserMutation.isLoading ? 'Signing up...' : 'Signup'}
         </button>
 
         <p className='text-xs mb-[10px] md:text-sm lg:text-base'>

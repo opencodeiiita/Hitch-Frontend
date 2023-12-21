@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
 import CreateWorkspace from '../workspace/CreateWorkspace';
@@ -21,6 +22,16 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
     const handleSignUpClick = () => {
         router.push('/auth/sign-up');
     };
+
+    const { isAuthenticated, login, logout } = useAuth();
+
+
+    const handleLogoutClick = () => {
+      logout();
+      // router.push('/');
+    };
+
+
   return (
     <>
     {showModal && <CreateWorkspace setShowModal={setShowModal} />}
@@ -50,8 +61,11 @@ const NavBar = ({ sideButtonColor = "black", dropDownBg = "bg-primary", isSignIn
           }
           {!open ? (
             <>
-              {isSignIn ? (
+              {isAuthenticated ? (
+                <>
                 <button onClick={()=>setShowModal(true)} className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}>Create Workspace</button>
+                <button onClick={handleLogoutClick} className={`btn ${itemColor} ${itemColorOnHover}  hover:text-[#000000] hover:font-semibold hover:duration-0  text-text lg:ml-28  px-3 py-1 rounded duration-500 lg:static `}>Logout</button>
+                </>
               ) : (
                 <>
                   <button  onClick={handleLoginClick} className={`btn  ${itemColor} ${itemColorOnHover}  hover:text-[#000000] hover:font-semibold hover:duration-0  text-text lg:ml-28  px-3 py-1 rounded duration-500 lg:static `}>Login</button>

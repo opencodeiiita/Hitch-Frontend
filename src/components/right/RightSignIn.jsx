@@ -1,6 +1,30 @@
 'use client'
 import React, { useState } from 'react';
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { useLoginUser } from '@/utils/api';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+`;
+
+const ModalContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
 
 const Checkbox = styled.input`
   appearance: none;
@@ -33,6 +57,7 @@ const Checkbox = styled.input`
 const RightSignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { isAuthenticated, login, logout } = useAuth();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -41,6 +66,13 @@ const RightSignIn = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
+
+    const loginUserMutation = useLoginUser();
+
+    const router = useRouter()
+
+    const [loadingOverlay, setLoadingOverlay] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
 
     const validateEmail = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -53,7 +85,7 @@ const RightSignIn = () => {
         return passwordRegex.test(password);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!validateEmail()) {
@@ -70,9 +102,63 @@ const RightSignIn = () => {
         Email: email,
         Password: password
         })
-    };
+
+        
+    try {
+      setLoadingOverlay(true);
+      const { data } = await loginUserMutation.mutateAsync({
+        password,
+        email
+      });
+
+      // Store the token in local storage
+      localStorage.setItem('token', data.token);
+
+      // Navigate to the home page
+      router.push('/home');
+
+      login();
+
+      console.log('Login successfully:', data);
+      setModalContent({
+        type: 'success',
+        message: 'Login successful!',
+      });
+    } catch (error) {
+      console.log(error);
+        console.error('Login error:', error.message);
+        setModalContent({
+          type: 'error',
+          message: error.message || 'An error occurred during login.',
+        });
+    }
+    finally {
+      setLoadingOverlay(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalContent(null);
+    loginUserMutation.reset();
+  };
     return (
         <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
+        {loadingOverlay && (
+        <Overlay>
+          <p>Loading...</p>
+        </Overlay>
+      )}
+
+      {modalContent && (
+        <Overlay>
+          <ModalContent>
+            <p style={{ color: modalContent.type === 'success' ? 'green' : 'red' }}>
+              {modalContent.message}
+            </p>
+            <button onClick={closeModal}>OK</button>
+          </ModalContent>
+        </Overlay>
+      )}
         <div className='text-center w-4/5'>
           <div className='flex items-center mb-4'>
             <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />
