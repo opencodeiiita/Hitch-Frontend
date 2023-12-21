@@ -229,7 +229,12 @@
     "name": "Aman Kumar",
    "githubid": "amankumar0724",
    "college" : "IIITA"
-}
+  },
+  {
+    name: Siddarth Banerjee,
+    githubid: sid2801,
+    college: BIT, Mesra
+  }
 
    
 
