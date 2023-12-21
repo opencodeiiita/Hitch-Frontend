@@ -190,11 +190,23 @@ const RigthSignUp = () => {
     registerUserMutation.reset();
   };
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+  const [isMobile, setIsMobile] = useState(() => {
+    // Use window.innerWidth only on the client side
+    if (typeof window !== 'undefined') {
+      return window.innerWidth <= 767;
+    }
+    return false;
+  });
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
+      setIsMobile(() => {
+        // Use window.innerWidth only on the client side
+        if (typeof window !== 'undefined') {
+          return window.innerWidth <= 767;
+        }
+        return false;
+      });
     };
 
     // Event listener for window resize

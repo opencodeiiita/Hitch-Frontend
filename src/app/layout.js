@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider } from '@/contexts/AuthContext';
+import MuiThemeProvider from "@/providers/muiThemeProvider";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <html lang="en">
-          <body className={inter.className}>{children}</body>
+          <body className={inter.className}>
+            <MuiThemeProvider>{children}</MuiThemeProvider>
+          </body>
         </html>
       </AuthProvider>
     </QueryClientProvider>

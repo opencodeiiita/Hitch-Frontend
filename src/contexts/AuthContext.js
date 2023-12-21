@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setAuthenticated] = useState(!!localStorage.getItem('token'));
+  const [isAuthenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if localStorage is available (client-side)
+    const storedToken = localStorage.getItem('token');
+    setAuthenticated(!!storedToken);
+  }, []);
 
   const login = () => {
     // Perform login logic if needed
