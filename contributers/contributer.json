@@ -155,19 +155,19 @@
         "college": "IIITA"
     },
     {
-        "name":"Veerathu Sri Sindhu",
-        "githubid":"Sindhu194",
-        "college":"IIITA"
+        "name": "Veerathu Sri Sindhu",
+        "githubid": "Sindhu194",
+        "college": "IIITA"
     },
     {
-        "name":"Sugam Sareen",
-        "githubid":"ssugam10",
-        "college":"IIITA"
+        "name": "Sugam Sareen",
+        "githubid": "ssugam10",
+        "college": "IIITA"
     },
     {
-        "name":"Satvik Dubey",
-        "githubid":"Satvik7773",
-        "college":"IIITA"
+        "name": "Satvik Dubey",
+        "githubid": "Satvik7773",
+        "college": "IIITA"
     },
     {
         "name": "Veerathu Sri Sindhu",
@@ -175,67 +175,57 @@
         "college": "IIITA"
     },
     {
-
-
-
         "name": "Sushmitha Pothuraju",
         "githubid": "imsushmitha-13",
         "college": "IIITA"
     },
-  {
+    {
         "name": "Navaneetha Krishnan R",
         "githubid": "rnavaneeth992",
         "college": "CEG"
-
     },
 
     {
-  "name": "Shweta Pandey",
-  "githubid": "Shweta-1902",
-  "college": "IIITA"
-
-
+        "name": "Shweta Pandey",
+        "githubid": "Shweta-1902",
+        "college": "IIITA"
     },
     {
-         "name": "Nilesh Chaubey",
+        "name": "Nilesh Chaubey",
         "githubid": "nilesh9758",
         "college": "IIITA"
     },
     {
         "name": "Abhishek Kumat",
-       "githubid": "abhi5h6k",
-       "college": "IIITA"
-   },
+        "githubid": "abhi5h6k",
+        "college": "IIITA"
+    },
 
-   {
+    {
         "name": "Akshat Joshi",
-       "githubid": "Aj9630747827",
-     "college": "IIITA"
-  
-   },
+        "githubid": "Aj9630747827",
+        "college": "IIITA"
+    },
     {
         "name": "Aditya Khairnar",
-       "githubid": "k7aditya",
+        "githubid": "k7aditya",
 
-       "college": "IIITA"
-   },
+        "college": "IIITA"
+    },
 
-  {
-      "name": "Aditi Gupta",
-     "githubid": "AditiGupta976",
-     "college" : "IIITA"
-  },
-  {
-    "name": "Aman Kumar",
-   "githubid": "amankumar0724",
-   "college" : "IIITA"
-  },
-  {
-    name: Siddarth Banerjee,
-    githubid: sid2801,
-    college: BIT, Mesra
-  }
-
-   
-
+    {
+        "name": "Aditi Gupta",
+        "githubid": "AditiGupta976",
+        "college": "IIITA"
+    },
+    {
+        "name": "Aman Kumar",
+        "githubid": "amankumar0724",
+        "college": "IIITA"
+    },
+    {
+        "name": "Siddarth Banerjee",
+        "githubid": "sid2801",
+        "college": "BIT, Mesra"
+    }
 ]
