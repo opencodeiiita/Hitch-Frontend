@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { useRegisterUser } from '@/utils/api';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { validateEmail, validatePassword,validateConfirmPassword,validateName,validateUsername } from '@/utils/validation';
 
 const Overlay = styled.div`
   position: fixed;
@@ -81,30 +85,6 @@ const RigthSignUp = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const validateEmail = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validatePassword = () => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-    return passwordRegex.test(password);
-  };
-
-  const validateName = () => {
-    const nameRegex = /^[a-zA-Z\s]+$/;
-    return name.trim().length > 0 && nameRegex.test(name);
-  };
-
-  const validateUsername = () => {
-    const usernameRegex = /^[a-zA-Z0-9]+$/;
-    return username.trim().length > 0 && usernameRegex.test(username);
-  };
-
-  const validateConfirmPassword = () => {
-    return password === confirmPassword;
-  };
-
   const registerUserMutation = useRegisterUser();
 
   const router = useRouter()
@@ -115,37 +95,30 @@ const RigthSignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateEmail()) {
-      alert('Please enter a valid email address');
+    if (!validateEmail(email)) {
+      toast.error('Please enter a valid email address');
       return;
     }
 
-    if (!validateName()) {
-      alert('Name must be at least 1 character and include letters only');
+    if (!validateName(name)) {
+      toast.error('Name must be at least 1 character and include letters only');
       return;
     }
 
-    if (!validateUsername()) {
-      alert('Username must be at least 1 character and include letters, numbers');
+    if (!validateUsername(username)) {
+      toast.error('Username must be at least 1 character and include letters only');
       return;
     }
 
-    if (!validatePassword()) {
-      alert('Password must be at least 8 characters and include letters, numbers, and symbols');
+    if (!validatePassword(password)) {
+      toast.error('Password must be at least 8 characters and include letters, numbers, and symbols');
       return;
     }
 
-    if (!validateConfirmPassword()) {
-      alert('Password and Confirm Password must match');
+    if (!validateConfirmPassword(password,confirmPassword)) {
+      toast.error('Password and Confirm Password must match');
       return;
     }
-
-    console.log({
-      Email: email,
-      Username: username,
-      Name: name,
-      Password: password
-    });
 
     try {
       setLoadingOverlay(true);
@@ -156,6 +129,8 @@ const RigthSignUp = () => {
         name,
       });
 
+      toast.success('Registration successful!');
+
       // Store the token in local storage
       localStorage.setItem('token', data.token);
 
@@ -165,18 +140,11 @@ const RigthSignUp = () => {
 
       // Handle successful registration, e.g., store token, redirect, etc.
       console.log('User registered successfully:', data);
-      setModalContent({
-        type: 'success',
-        message: 'Registration successful!',
-      });
     } catch (error) {
       // Handle registration failure
       console.log(error);
-        console.error('Registration error:', error.message);
-        setModalContent({
-          type: 'error',
-          message: error.message || 'An error occurred during registration.',
-        });
+      console.error('Registration error:', error.message);
+      toast.error(error.message || 'An error occurred during login.');
     }
     finally {
       // Hide loading overlay after the mutation is complete
@@ -226,16 +194,8 @@ const RigthSignUp = () => {
         </Overlay>
       )}
 
-      {modalContent && (
-        <Overlay>
-          <ModalContent>
-            <p style={{ color: modalContent.type === 'success' ? 'green' : 'red' }}>
-              {modalContent.message}
-            </p>
-            <button onClick={closeModal}>OK</button>
-          </ModalContent>
-        </Overlay>
-      )}
+      <ToastContainer />
+      
       <div className='text-center w-4/5'>
         <div className='flex items-center mb-4'>
           <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />

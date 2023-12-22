@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const registerUser = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/user/register', userData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/register`, userData);
       return response.data;
     } catch (error) {
         console.log(error);
@@ -13,7 +13,7 @@ const registerUser = async (userData) => {
 
 const loginUser = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/user/login', userData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/login`, userData);
       return response.data;
     } catch (error) {
         console.log(error);

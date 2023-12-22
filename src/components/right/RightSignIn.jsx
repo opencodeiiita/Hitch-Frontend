@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { useLoginUser } from '@/utils/api';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { validateEmail, validatePassword } from '@/utils/validation';
 
 const Overlay = styled.div`
   position: fixed;
@@ -74,72 +78,39 @@ const RightSignIn = () => {
     const [loadingOverlay, setLoadingOverlay] = useState(false);
     const [modalContent, setModalContent] = useState(null);
 
-    const validateEmail = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    const validatePassword = () => {
-        // Password should have at least 8 characters and contain a combination of letters, numbers, and symbols
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-        return passwordRegex.test(password);
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateEmail()) {
-        alert('Please enter a valid email address');
-        return;
+        if (!validateEmail(email)) {
+          toast.error('Please enter a valid email address');
+          return;
         }
 
-        if (!validatePassword()) {
-        alert('Password must be at least 8 characters and include letters, numbers, and symbols');
+        if (!validatePassword(password)) {
+          toast.error('Password must be at least 8 characters and include letters, numbers, and symbols');
         return;
         }
-
-        console.log({
-        Email: email,
-        Password: password
-        })
-
         
-    try {
-      setLoadingOverlay(true);
-      const { data } = await loginUserMutation.mutateAsync({
-        password,
-        email
-      });
+        try {
+          setLoadingOverlay(true);
+          const { data } = await loginUserMutation.mutateAsync({
+            password,
+            email,
+          });
 
-      // Store the token in local storage
-      localStorage.setItem('token', data.token);
-
-      // Navigate to the home page
-      router.push('/home');
-
-      login();
-
-      console.log('Login successfully:', data);
-      setModalContent({
-        type: 'success',
-        message: 'Login successful!',
-      });
-    } catch (error) {
-      console.log(error);
-        console.error('Login error:', error.message);
-        setModalContent({
-          type: 'error',
-          message: error.message || 'An error occurred during login.',
-        });
-    }
-    finally {
-      setLoadingOverlay(false);
-    }
-  };
-
-  const closeModal = () => {
-    setModalContent(null);
-    loginUserMutation.reset();
+          toast.success('Login successful!');
+    
+          localStorage.setItem('token', data.token);
+          router.push('/home');
+          login();
+    
+          console.log('Login successfully:', data);
+        } catch (error) {
+          console.error('Login error:', error.message);
+          toast.error(error.message || 'An error occurred during login.');
+        } finally {
+          setLoadingOverlay(false);
+        }
   };
     return (
         <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
@@ -149,16 +120,7 @@ const RightSignIn = () => {
         </Overlay>
       )}
 
-      {modalContent && (
-        <Overlay>
-          <ModalContent>
-            <p style={{ color: modalContent.type === 'success' ? 'green' : 'red' }}>
-              {modalContent.message}
-            </p>
-            <button onClick={closeModal}>OK</button>
-          </ModalContent>
-        </Overlay>
-      )}
+      <ToastContainer />
         <div className='text-center w-4/5'>
           <div className='flex items-center mb-4'>
             <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />
@@ -217,7 +179,7 @@ const RightSignIn = () => {
 
           {/* Not Registered Yet? */}
           <p className='text-xs md:text-sm lg:text-base'>
-            Not Registered Yet? <a href='/' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
+            Not Registered Yet? <a href='/auth/sign-up' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
           </p>
         </div>
       </div>
