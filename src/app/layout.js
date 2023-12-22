@@ -1,29 +1,24 @@
-'use client'
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { AuthProvider } from '@/contexts/AuthContext';
 import MuiThemeProvider from "@/providers/muiThemeProvider";
+import QueryProvider from '@/providers/queryProvider';
 
-const queryClient = new QueryClient();
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata = {
-//   title: 'Hitch',
-//   description: 'Elevating Collaboration Beyond Boundaries',
-// }
+export const metadata = {
+  title: 'Hitch',
+  description: 'Elevating Collaboration Beyond Boundaries',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
         <html lang="en">
           <body className={inter.className}>
-            <MuiThemeProvider>{children}</MuiThemeProvider>
+          <QueryProvider>
+                <MuiThemeProvider>{children}</MuiThemeProvider>
+            </QueryProvider>
           </body>
         </html>
-      </AuthProvider>
-    </QueryClientProvider>
   )
 }
