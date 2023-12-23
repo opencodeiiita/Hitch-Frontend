@@ -25,14 +25,27 @@ export default function Page({params}) {
 
             </nav>
             <div className='flex grow'>
-                <section className=' w-12 '>
-                    <ul>
+                <section className='  flex flex-col justify-between bg-background-dark pb-6 pl-4'>
+                    <ul className='space-y-2'>
                         {/* Map over all channels user belongs to here */}
                         {[1,2,3,4,5].map(channel=>(
                             <WorkSpaceIcon key={channel} channelId={channel} channelIcon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDHq11jm0fyr1x4kg6DK1ptduHcV4ZUQwTZw&usqp=CAU" isActive={channel==params.id}/>
                         ))}
-                    
                     </ul>
+                    <aside className='flex flex-col justify-center items-center space-y-7 mr-2'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-[#F2D8FF] h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 text-[#F2D8FF] h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        
+                        <aside className='relative w-fit'>
+                            <img src='https://avatarfiles.alphacoders.com/364/364185.png' width={48} height={48} className='rounded-xl object-cover' />
+                            <p className='absolute w-3 h-3 bg-green-500 rounded-full -bottom-1 -right-1'></p>
+                        </aside>
+
+                    </aside>
                 </section>
                 <ConversationCards />
             </div>
