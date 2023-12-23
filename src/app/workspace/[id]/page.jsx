@@ -24,8 +24,8 @@ export default function Page({params}) {
                 </svg>
 
             </nav>
-            <div className='flex grow'>
-                <section className='  flex flex-col justify-between bg-background-dark pb-6 pl-4'>
+            <div className='flex grow bg-background-dark pr-2.5 pb-2'>
+                <section className='flex flex-col justify-between bg-background-dark pb-6 pl-4'>
                     <ul className='space-y-2'>
                         {/* Map over all channels user belongs to here */}
                         {[1,2,3,4,5].map(channel=>(
@@ -46,6 +46,9 @@ export default function Page({params}) {
                         </aside>
 
                     </aside>
+                </section>
+                <section className='h-full w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2'>
+                    {/* Please put the sidebar component inside this without changing any styles of section */}
                 </section>
                 <ConversationCards />
             </div>
