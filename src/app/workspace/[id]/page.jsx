@@ -1,9 +1,10 @@
 import React from 'react'
+import ConversationCards from "@/components/ConversationCard/ConversationCard";
 
 export default function Page() {
 
     return (
-        <div className='w-screen h-screen bg-background-dark'>
+        <div className='w-screen h-screen bg-background-dark flex flex-col'>
             <nav className='flex justify-between p-2'>
                 <span></span>
                 {/* Enter searchbar here */}
@@ -12,6 +13,12 @@ export default function Page() {
                 </svg>
 
             </nav>
+            <div className='flex space-x-1 grow'>
+                <section className=' w-12 bg-white'>
+                    ew
+                </section>
+                <ConversationCards />
+            </div>
         </div>
     )
 }

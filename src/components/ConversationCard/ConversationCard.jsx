@@ -91,8 +91,8 @@ const ConversationCards = () => {
 
   return (
     <div
-      className="w-[100%] border-[6px] border-white border bg-white m-auto flex flex-col sm:w-[65%] 
-      h-[100vh] rounded-[8px] justify-between overflow-hidden"
+      className="grow border-[6px] border-white bg-white m-auto flex flex-col sm:w-[65%] 
+      h-full rounded-[8px] justify-between overflow-hidden"
     >
       <div
         className="max-[732px]:p-[12px_12px_8px_12px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[16px]
