@@ -1,8 +1,19 @@
+"use client";
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import ConversationCards from "@/components/ConversationCard/ConversationCard";
 
-export default function Page() {
+const WorkSpaceIcon=({channelId,channelIcon,isActive})=>
+{
+    const router = useRouter();
+    return (
+        <li className={`pl-1 pr-2 py-1.5 ${isActive?"bg-white":"bg-transparent"} rounded-l-lg`} onClick={()=>router.push(`/workspace/${channelId}`)}>
+            <img src={channelIcon} width={48} height={48} className='rounded-lg' />
+        </li>
+    )
+}
 
+export default function Page({params}) {
     return (
         <div className='w-screen h-screen bg-background-dark flex flex-col'>
             <nav className='flex justify-between p-2'>
@@ -13,9 +24,15 @@ export default function Page() {
                 </svg>
 
             </nav>
-            <div className='flex space-x-1 grow'>
-                <section className=' w-12 bg-white'>
-                    ew
+            <div className='flex grow'>
+                <section className=' w-12 '>
+                    <ul>
+                        {/* Map over all channels user belongs to here */}
+                        {[1,2,3,4,5].map(channel=>(
+                            <WorkSpaceIcon key={channel} channelId={channel} channelIcon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDHq11jm0fyr1x4kg6DK1ptduHcV4ZUQwTZw&usqp=CAU" isActive={channel==params.id}/>
+                        ))}
+                    
+                    </ul>
                 </section>
                 <ConversationCards />
             </div>

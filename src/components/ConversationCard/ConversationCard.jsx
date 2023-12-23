@@ -120,7 +120,7 @@ const ConversationCards = () => {
           </div>
           <div className="h-[39px] max-[732px]:h-[28px] max-[732px]:gap-[.5rem] gap-[1rem] flex">
             <div
-              className="h-[100%] bg-white
+              className="h-full bg-white
               max-[732px]:p-[4px]  rounded-[8px] flex justify-center items-center gap-[3px] p-[6px]"
             >
               <Image
@@ -147,7 +147,7 @@ const ConversationCards = () => {
               <p className="ml-[2px] text-[#60605F] font-[600]">4</p>
             </div>
             <div
-              className="gap-[.55rem] h-[100%] max-[732px]:px-[4px] bg-white rounded-[8px]
+              className="h-full max-[732px]:px-[4px] bg-white rounded-[8px]
             flex  items-center gap-[4px] px-[6px] py-[6px]"
             >
               <svg
@@ -180,7 +180,7 @@ const ConversationCards = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
+              <hr className="h-full border-r-[1px] border-[#CCCCCC]" />
               <svg
                 width="11"
                 height="7"
@@ -195,7 +195,7 @@ const ConversationCards = () => {
                 />
               </svg>
             </div>
-            <div className="bg-white h-[100%] rounded-[8px] flex justify-between items-center p-[8px]">
+            <div className="bg-white h-full rounded-[8px] flex justify-between items-center p-[8px]">
               <svg
                 className="h-full w-auto"
                 width="22"
