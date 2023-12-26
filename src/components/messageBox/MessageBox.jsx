@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 import ReactionIcon from "./ReactionIcon";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
+import { init, SearchIndex } from "emoji-mart";
 
 const ChatNotification = ({
   loading = true,
@@ -13,23 +16,64 @@ const ChatNotification = ({
   userAvatar,
   timepassed = "30",
   reactions = [
-    { type: "like", count: 5, selected: false },
-    { type: "happy", count: 3, selected: false },
-    { type: "sad", count: 1, selected: false },
-    { type: "emote4", count: 115, selected: false },
-    { type: "emote5", count: 15, selected: false },
+    { type: ":grinning:", count: 5, selected: false },
+    { type: ":+1:", count: 3, selected: false },
+    { type: ":astonished:", count: 1, selected: false },
+    { type: ":wink:", count: 115, selected: false },
+    { type: ":joy:", count: 15, selected: false },
   ],
 }) => {
+  const useOnClickOutside = (ref, handler) => {
+    useEffect(() => {
+      const listener = (event) => {
+        if (!ref.current || ref.current.contains(event.target)) {
+          return;
+        }
+
+        handler(event);
+      };
+
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
+
+      return () => {
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
+      };
+    }, [ref, handler]);
+  };
+
+  useEffect(() => {
+    init({ data });
+  });
+  const ref = useRef();
   const [newReactions, setNewReactions] = useState(reactions);
+  const [picker, setPicker] = useState(false);
+  useOnClickOutside(ref, () => setPicker(!picker));
+
   const selectReaction = (reactionIndex) => {
     let arr = [...newReactions];
 
     if (arr[reactionIndex].selected === true) {
       arr[reactionIndex].count -= 1;
       arr[reactionIndex].selected = false;
+      if (arr[reactionIndex].count <= 0) arr.splice(reactionIndex, 1);
     } else {
       arr[reactionIndex].selected = true;
       arr[reactionIndex].count += 1;
+    }
+    setNewReactions(arr);
+  };
+  const addReaction = (shortcode) => {
+    let arr = [...newReactions];
+
+    if (arr.find((item) => item.type === shortcode)) {
+      if (!arr[arr.findIndex((item) => item.type === shortcode)].selected) {
+        arr[arr.findIndex((item) => item.type === shortcode)].selected = true;
+        arr[arr.findIndex((item) => item.type === shortcode)].count += 1;
+      }
+    } else {
+      arr.push({ type: shortcode, selected: true, count: 1 });
     }
     setNewReactions(arr);
   };
@@ -44,6 +88,19 @@ const ChatNotification = ({
         boxShadow: "none",
       }}
     >
+      {picker ? (
+        <div ref={ref} className="absolute top-[212px] z-[1]">
+          <Picker
+            data={data}
+            onEmojiSelect={(e) => {
+              setPicker(false);
+              addReaction(e.shortcodes);
+              console.log(e);
+            }}
+          />
+        </div>
+      ) : null}
+
       <div
         style={{
           display: "flex",
@@ -150,8 +207,9 @@ const ChatNotification = ({
               >
                 {message}
               </Typography>
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <div
+                  onClick={() => setPicker(true)}
                   className="ml-[10px] mt-[4px] cursor-pointer flex rounded-[16px] gap justify-center 
                 items-center h-[24px] py-[3px] bg-[#F0E4FF]
               gap-[4px] px-[10px] hover:bg-[#e8d9fa] font-[500] w-[fit-content]"
@@ -201,7 +259,9 @@ const ChatNotification = ({
                 items-center h-[24px] py-[3px] bg-[#F0E4FF]
               gap-[4px] px-[10px] hover:bg-[#e3cffa] font-[500] w-[fit-content]`}
                   >
-                    <ReactionIcon emote={reaction.type} />
+                    <span>
+                      <em-emoji shortcodes={reaction.type}></em-emoji>
+                    </span>
                     {reaction.count}
                   </div>
                 ))}
