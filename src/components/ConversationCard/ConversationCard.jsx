@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import MessageBox from "../messageBox/MessageBox";
-const ConversationCards = () => {
+import Skeleton from "@mui/material/Skeleton";
+
+const ConversationCards = ({ loading }) => {
   const [text, settext] = useState("");
 
   const changeSelectedText = (markup) => {
@@ -91,8 +93,8 @@ const ConversationCards = () => {
 
   return (
     <div
-      className="w-[100%] border-[6px] border-white border bg-white m-auto flex flex-col sm:w-[65%] 
-      h-[100vh] rounded-[8px] justify-between overflow-hidden"
+      className="h-[calc(100vh_-_48px)] grow rounded-[10px] border-[6px] border-white bg-white m-auto flex flex-col w-full 
+      justify-between overflow-hidden"
     >
       <div
         className="max-[732px]:p-[12px_12px_8px_12px] bg-[#F6EFFF] pt-[20px] px-[24px] pb-[16px]
@@ -100,9 +102,26 @@ const ConversationCards = () => {
       >
         <div className="flex-wrap justify-between gap-y-[1rem] flex items-center">
           <div className="max-w-[480px]  h-[18px] flex items-center gap-2">
-            <p className="font-bold max-[732px]:text-[1rem]	text-[1.25rem]">
-              #design-hive
-            </p>
+            {!loading ? (
+              <p className="font-bold max-[732px]:text-[1rem]	text-[1.25rem]">
+                #design-hive
+              </p>
+            ) : (
+              <Skeleton
+                variant="text"
+                width={130}
+                sx={{
+                  fontSize: "1rem",
+                  maxW: "max-content",
+                  "@media (max-width: 732px)": {
+                    fontSize: "1rem",
+                  },
+                  "@media (min-width: 732px)": {
+                    fontSize: "1.25rem",
+                  },
+                }}
+              />
+            )}
             <svg
               width="18"
               height="18"
@@ -119,168 +138,195 @@ const ConversationCards = () => {
             </svg>
           </div>
           <div className="h-[39px] max-[732px]:h-[28px] max-[732px]:gap-[.5rem] gap-[1rem] flex">
-            <div
-              className="h-[100%] bg-white
+            {!loading ? (
+              <>
+                <div
+                  className="h-full bg-white
               max-[732px]:p-[4px]  rounded-[8px] flex justify-center items-center gap-[3px] p-[6px]"
-            >
-              <Image
-                className="rounded-[4px] w-auto h-full"
-                alt="maria"
-                src="/image 12.png"
-                height={28}
-                width={28}
-              />
-              <Image
-                className="rounded-[4px] w-auto h-full"
-                alt="julia"
-                src="/image 13.png"
-                height={28}
-                width={28}
-              />
-              <Image
-                className="rounded-[4px] w-auto h-full"
-                alt="katherine"
-                src="/image 14.png"
-                height={28}
-                width={28}
-              />
-              <p className="ml-[2px] text-[#60605F] font-[600]">4</p>
-            </div>
-            <div
-              className="gap-[.55rem] h-[100%] max-[732px]:px-[4px] bg-white rounded-[8px]
+                >
+                  <Image
+                    className="rounded-[4px] w-auto h-full"
+                    alt="maria"
+                    src="/image 12.png"
+                    height={28}
+                    width={28}
+                  />
+                  <Image
+                    className="rounded-[4px] w-auto h-full"
+                    alt="julia"
+                    src="/image 13.png"
+                    height={28}
+                    width={28}
+                  />
+                  <Image
+                    className="rounded-[4px] w-auto h-full"
+                    alt="katherine"
+                    src="/image 14.png"
+                    height={28}
+                    width={28}
+                  />
+                  <p className="ml-[2px] text-[#60605F] font-[600]">4</p>
+                </div>
+                <div
+                  className="h-full max-[732px]:px-[4px] bg-white rounded-[8px]
             flex  items-center gap-[4px] px-[6px] py-[6px]"
-            >
-              <svg
-                className="h-[30px]  max-[732px]:h-[22px] w-auto"
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.5061 20.195C27.5061 17.3433 24.2072 18.0212 21.4292 18.0212V28.4387C22.9027 28.4387 24.8368 28.5479 25.8788 27.5059C26.9207 26.464 27.5061 25.0508 27.5061 23.5772V20.195Z"
-                  stroke="#60605F"
-                  strokeWidth="2.08351"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M6.844 20.195C6.844 17.3433 10.1429 18.0212 12.9209 18.0212V28.4387C11.4473 28.4387 9.51328 28.5479 8.47132 27.5059C7.42936 26.464 6.844 25.0508 6.844 23.5772V20.195Z"
-                  stroke="#60605F"
-                  strokeWidth="2.08351"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M6.32373 23.2292V14.2007C6.32373 11.9904 7.88606 10.7285 9.44899 9.16555C11.0119 7.60261 15.0518 6.04028 17.2622 6.04028C19.4725 6.04028 23.5124 7.60261 25.0753 9.16555C26.3675 10.4578 27.6797 11.9904 27.6797 14.2007V23.2292"
-                  stroke="#60605F"
-                  strokeWidth="2.08351"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <hr className="h-[100%] border-r-[1px] border-[#CCCCCC]" />
-              <svg
-                width="11"
-                height="7"
-                viewBox="0 0 11 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.20215 0.895386L5.36917 5.0624L9.53619 0.895386"
-                  stroke="#60605F"
-                  strokeWidth="2.08351"
-                />
-              </svg>
-            </div>
-            <div className="bg-white h-[100%] rounded-[8px] flex justify-between items-center p-[8px]">
-              <svg
-                className="h-full w-auto"
-                width="22"
-                height="20"
-                viewBox="0 0 22 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2.91456 18.124C2.62287 18.124 2.39369 17.8844 2.39369 17.5927C2.39369 15.5092 5.61271 13.4361 9.16509 13.4361C9.71722 13.4361 10.2589 13.4882 10.7902 13.582C10.9152 13.0298 11.1965 12.5506 11.5195 12.1548C13.2175 11.0088 14.3739 8.75865 14.3739 6.66473C14.3739 3.34153 12.4049 0.935075 9.16509 0.935075C5.92524 0.935075 3.95632 3.34153 3.95632 6.66473C3.95632 8.73782 5.09183 10.9776 6.76906 12.1339C3.34168 12.884 0.831055 15.1863 0.831055 17.5927C0.831055 18.7491 1.75822 19.6867 2.91456 19.6867H13.5925C14.0197 19.6867 14.3739 19.3325 14.3739 18.9053C14.3739 18.4782 14.0197 18.124 13.5925 18.124H2.91456ZM5.51895 6.66473C5.51895 4.07076 6.9149 2.49771 9.16509 2.49771C11.4153 2.49771 12.8112 4.07076 12.8112 6.66473C12.8112 9.01909 10.9569 11.3526 9.16509 11.3526C7.37327 11.3526 5.51895 9.01909 5.51895 6.66473ZM18.02 13.4361V10.5713C18.02 10.1442 17.6658 9.78999 17.2387 9.78999C16.8116 9.78999 16.4574 10.1442 16.4574 10.5713V13.4361H13.5925C13.1654 13.4361 12.8112 13.7903 12.8112 14.2174C12.8112 14.6446 13.1654 14.9988 13.5925 14.9988H16.4574V17.8636C16.4574 18.2907 16.8116 18.6449 17.2387 18.6449C17.6658 18.6449 18.02 18.2907 18.02 17.8636V14.9988H20.8848C21.312 14.9988 21.6661 14.6446 21.6661 14.2174C21.6661 13.7903 21.312 13.4361 20.8848 13.4361H18.02Z"
-                  fill="black"
-                  fillOpacity="0.6"
-                />
-              </svg>
-            </div>
+                >
+                  <svg
+                    className="h-[30px]  max-[732px]:h-[22px] w-auto"
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M27.5061 20.195C27.5061 17.3433 24.2072 18.0212 21.4292 18.0212V28.4387C22.9027 28.4387 24.8368 28.5479 25.8788 27.5059C26.9207 26.464 27.5061 25.0508 27.5061 23.5772V20.195Z"
+                      stroke="#60605F"
+                      strokeWidth="2.08351"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M6.844 20.195C6.844 17.3433 10.1429 18.0212 12.9209 18.0212V28.4387C11.4473 28.4387 9.51328 28.5479 8.47132 27.5059C7.42936 26.464 6.844 25.0508 6.844 23.5772V20.195Z"
+                      stroke="#60605F"
+                      strokeWidth="2.08351"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M6.32373 23.2292V14.2007C6.32373 11.9904 7.88606 10.7285 9.44899 9.16555C11.0119 7.60261 15.0518 6.04028 17.2622 6.04028C19.4725 6.04028 23.5124 7.60261 25.0753 9.16555C26.3675 10.4578 27.6797 11.9904 27.6797 14.2007V23.2292"
+                      stroke="#60605F"
+                      strokeWidth="2.08351"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <hr className="h-full border-r-[1px] border-[#CCCCCC]" />
+                  <svg
+                    width="11"
+                    height="7"
+                    viewBox="0 0 11 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.20215 0.895386L5.36917 5.0624L9.53619 0.895386"
+                      stroke="#60605F"
+                      strokeWidth="2.08351"
+                    />
+                  </svg>
+                </div>
+                <div className="bg-white h-full rounded-[8px] flex justify-between items-center p-[8px]">
+                  <svg
+                    className="h-full w-auto"
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.91456 18.124C2.62287 18.124 2.39369 17.8844 2.39369 17.5927C2.39369 15.5092 5.61271 13.4361 9.16509 13.4361C9.71722 13.4361 10.2589 13.4882 10.7902 13.582C10.9152 13.0298 11.1965 12.5506 11.5195 12.1548C13.2175 11.0088 14.3739 8.75865 14.3739 6.66473C14.3739 3.34153 12.4049 0.935075 9.16509 0.935075C5.92524 0.935075 3.95632 3.34153 3.95632 6.66473C3.95632 8.73782 5.09183 10.9776 6.76906 12.1339C3.34168 12.884 0.831055 15.1863 0.831055 17.5927C0.831055 18.7491 1.75822 19.6867 2.91456 19.6867H13.5925C14.0197 19.6867 14.3739 19.3325 14.3739 18.9053C14.3739 18.4782 14.0197 18.124 13.5925 18.124H2.91456ZM5.51895 6.66473C5.51895 4.07076 6.9149 2.49771 9.16509 2.49771C11.4153 2.49771 12.8112 4.07076 12.8112 6.66473C12.8112 9.01909 10.9569 11.3526 9.16509 11.3526C7.37327 11.3526 5.51895 9.01909 5.51895 6.66473ZM18.02 13.4361V10.5713C18.02 10.1442 17.6658 9.78999 17.2387 9.78999C16.8116 9.78999 16.4574 10.1442 16.4574 10.5713V13.4361H13.5925C13.1654 13.4361 12.8112 13.7903 12.8112 14.2174C12.8112 14.6446 13.1654 14.9988 13.5925 14.9988H16.4574V17.8636C16.4574 18.2907 16.8116 18.6449 17.2387 18.6449C17.6658 18.6449 18.02 18.2907 18.02 17.8636V14.9988H20.8848C21.312 14.9988 21.6661 14.6446 21.6661 14.2174C21.6661 13.7903 21.312 13.4361 20.8848 13.4361H18.02Z"
+                      fill="black"
+                      fillOpacity="0.6"
+                    />
+                  </svg>
+                </div>
+              </>
+            ) : (
+              <>
+                <Skeleton variant="rounded" width={116} height={39} />{" "}
+                <Skeleton height={39} width={62} variant="rounded" />
+                <Skeleton variant="rounded" width={39} height={39} />
+              </>
+            )}
           </div>
         </div>
         <hr className="border-[#CCCCCC]" />
         <div className="gap-[1rem] max-[732px]:text-[.75rem] flex">
-          <div className="flex items-center px-[4px] gap-[4px] bg-[#F4F4F4] rounded-[8px]">
-            <svg
-              className="max-[732px]:h-[12px] w-auto"
-              width="16"
-              height="17"
-              viewBox="0 0 16 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.00016 10.7725H3.3335V9.61542C3.3335 9.28911 3.46312 8.97617 3.69386 8.74543C4.53027 7.90902 5.00016 6.7746 5.00016 5.59173V4.10579C5.00016 3.36941 5.59712 2.77246 6.3335 2.77246H9.66683C10.4032 2.77246 11.0002 3.36941 11.0002 4.10579V5.59173C11.0002 6.7746 11.4701 7.90902 12.3065 8.74543C12.5372 8.97617 12.6668 9.28911 12.6668 9.61542V10.7725H8.00016ZM8.00016 10.7725V14.7725"
-                stroke="#272727"
-                strokeOpacity="0.7"
-                strokeWidth="1.33333"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
-              5 Pinned
-            </p>
-            <svg
-              className="max-[732px]:h-[12px] w-auto"
-              width="16"
-              height="16"
-              viewBox="0 0 18 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M2.46967 6.71967C2.76256 6.42678 3.23744 6.42678 3.53033 6.71967L9.00001 12.1893L14.4697 6.71967C14.7626 6.42678 15.2374 6.42678 15.5303 6.71967C15.8232 7.01256 15.8232 7.48744 15.5303 7.78033L10.0607 13.25C9.47489 13.8358 8.52514 13.8358 7.93935 13.25L2.46967 7.78033C2.17678 7.48744 2.17678 7.01256 2.46967 6.71967Z"
-                fill="#272727B2"
-              />
-            </svg>
-          </div>
-          <div className="flex items-center px-[4px] gap-[4px] text-[500]">
-            <svg
-              className="max-[732px]:h-[14px] w-auto"
-              width="16"
-              height="17"
-              viewBox="0 0 16 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.6667 8.77239L5.33333 8.77254M8 11.4391V6.10588M14 8.77246C14 12.0862 11.3137 14.7725 8 14.7725C4.68629 14.7725 2 12.0862 2 8.77246C2 5.45875 4.68629 2.77246 8 2.77246C11.3137 2.77246 14 5.45875 14 8.77246Z"
-                stroke="#272727"
-                strokeOpacity="0.7"
-                strokeWidth="1.33333"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
-              Add a bookmark
-            </p>
-          </div>
+          {loading ? (
+            <>
+              <Skeleton variant="rounded" width={107} height={18} />{" "}
+              <Skeleton variant="rounded" width={130} height={18} />
+            </>
+          ) : (
+            <>
+              <div className="flex items-center px-[4px] gap-[4px] bg-[#F4F4F4] rounded-[8px]">
+                <svg
+                  className="max-[732px]:h-[12px] w-auto"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.00016 10.7725H3.3335V9.61542C3.3335 9.28911 3.46312 8.97617 3.69386 8.74543C4.53027 7.90902 5.00016 6.7746 5.00016 5.59173V4.10579C5.00016 3.36941 5.59712 2.77246 6.3335 2.77246H9.66683C10.4032 2.77246 11.0002 3.36941 11.0002 4.10579V5.59173C11.0002 6.7746 11.4701 7.90902 12.3065 8.74543C12.5372 8.97617 12.6668 9.28911 12.6668 9.61542V10.7725H8.00016ZM8.00016 10.7725V14.7725"
+                    stroke="#272727"
+                    strokeOpacity="0.7"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
+                  5 Pinned
+                </p>
+                <svg
+                  className="max-[732px]:h-[12px] w-auto"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 18 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M2.46967 6.71967C2.76256 6.42678 3.23744 6.42678 3.53033 6.71967L9.00001 12.1893L14.4697 6.71967C14.7626 6.42678 15.2374 6.42678 15.5303 6.71967C15.8232 7.01256 15.8232 7.48744 15.5303 7.78033L10.0607 13.25C9.47489 13.8358 8.52514 13.8358 7.93935 13.25L2.46967 7.78033C2.17678 7.48744 2.17678 7.01256 2.46967 6.71967Z"
+                    fill="#272727B2"
+                  />
+                </svg>
+              </div>
+              <div className="flex items-center px-[4px] gap-[4px] text-[500]">
+                <svg
+                  className="max-[732px]:h-[14px] w-auto"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.6667 8.77239L5.33333 8.77254M8 11.4391V6.10588M14 8.77246C14 12.0862 11.3137 14.7725 8 14.7725C4.68629 14.7725 2 12.0862 2 8.77246C2 5.45875 4.68629 2.77246 8 2.77246C11.3137 2.77246 14 5.45875 14 8.77246Z"
+                    stroke="#272727"
+                    strokeOpacity="0.7"
+                    strokeWidth="1.33333"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="max-[732px]:text-[.75rem] text-[.875rem] text-[#272727B2] font-[500]">
+                  Add a bookmark
+                </p>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className={`${styles.scrollBar} overflow-y-scroll`}>
         {/* Message Component */}
-        <MessageBox /> <MessageBox />
-        <MessageBox />
-        <MessageBox />
+        {loading ? (
+          <>
+            <MessageBox loading={loading} /> <MessageBox loading={loading} />
+          </>
+        ) : (
+          <>
+            {[1, 2, 3, 4].map(() => (
+              <MessageBox loading={loading} />
+            ))}
+          </>
+        )}
       </div>
       <div className="w-[95%] m-auto mb-[16px]">
         <div

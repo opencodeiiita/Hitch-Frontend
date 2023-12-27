@@ -1,6 +1,34 @@
 'use client'
 import React, { useState } from 'react';
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { useLoginUser } from '@/utils/api';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { validateEmail, validatePassword } from '@/utils/validation';
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+`;
+
+const ModalContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
 
 const Checkbox = styled.input`
   appearance: none;
@@ -33,6 +61,7 @@ const Checkbox = styled.input`
 const RightSignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { isAuthenticated, login, logout } = useAuth();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -42,37 +71,56 @@ const RightSignIn = () => {
         setPassword(e.target.value);
     };
 
-    const validateEmail = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
+    const loginUserMutation = useLoginUser();
 
-    const validatePassword = () => {
-        // Password should have at least 8 characters and contain a combination of letters, numbers, and symbols
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-        return passwordRegex.test(password);
-    };
+    const router = useRouter()
 
-    const handleSubmit = (e) => {
+    const [loadingOverlay, setLoadingOverlay] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateEmail()) {
-        alert('Please enter a valid email address');
-        return;
+        if (!validateEmail(email)) {
+          toast.error('Please enter a valid email address');
+          return;
         }
 
-        if (!validatePassword()) {
-        alert('Password must be at least 8 characters and include letters, numbers, and symbols');
+        if (!validatePassword(password)) {
+          toast.error('Password must be at least 8 characters and include letters, numbers, and symbols');
         return;
         }
+        
+        try {
+          setLoadingOverlay(true);
+          const { data } = await loginUserMutation.mutateAsync({
+            password,
+            email,
+          });
 
-        console.log({
-        Email: email,
-        Password: password
-        })
-    };
+          toast.success('Login successful!');
+    
+          localStorage.setItem('token', data.token);
+          router.push('/home');
+          login();
+    
+          console.log('Login successfully:', data);
+        } catch (error) {
+          console.error('Login error:', error.message);
+          toast.error(error.message || 'An error occurred during login.');
+        } finally {
+          setLoadingOverlay(false);
+        }
+  };
     return (
         <div className='w-full md:w-1/2 flex justify-center items-center font-sans mt-10 md:mt-3'>
+        {loadingOverlay && (
+        <Overlay>
+          <p>Loading...</p>
+        </Overlay>
+      )}
+
+      <ToastContainer />
         <div className='text-center w-4/5'>
           <div className='flex items-center mb-4'>
             <img src='/logo.png' alt='Company Logo' className='h-16 mx-2 mb-2' />
@@ -131,7 +179,7 @@ const RightSignIn = () => {
 
           {/* Not Registered Yet? */}
           <p className='text-xs md:text-sm lg:text-base'>
-            Not Registered Yet? <a href='/' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
+            Not Registered Yet? <a href='/auth/sign-up' style={{color: "#390A75"}} className='font-bold'>Create an account</a>
           </p>
         </div>
       </div>

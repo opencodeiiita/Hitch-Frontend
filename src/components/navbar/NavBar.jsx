@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
-import CreateWorkspace from "../workspace/CreateWorkspace";
+import React, { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useRouter } from 'next/navigation';
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
+import CreateWorkspace from '../workspace/CreateWorkspace';
 const NavBar = ({
   sideButtonColor = "black",
   dropDownBg = "bg-primary",
@@ -27,12 +28,22 @@ const NavBar = ({
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
 
-  const handleLoginClick = () => {
-    router.push("/auth/sign-in");
-  };
-  const handleSignUpClick = () => {
-    router.push("/auth/sign-up");
-  };
+    const handleLoginClick = () => {
+        router.push('/auth/sign-in');
+    };
+    const handleSignUpClick = () => {
+        router.push('/auth/sign-up');
+    };
+
+    const { isAuthenticated, login, logout } = useAuth();
+
+
+    const handleLogoutClick = () => {
+      logout();
+      // router.push('/');
+    };
+
+
   return (
     <>
       {showModal && <CreateWorkspace setShowModal={setShowModal} />}
@@ -78,13 +89,21 @@ const NavBar = ({
             ))}
             {!open ? (
               <>
-                {isSignIn ? (
+                {isAuthenticated ? (
+                  <>
                   <button
                     onClick={() => setShowModal(true)}
                     className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}
                   >
                     Create Workspace
                   </button>
+                  <button
+                    onClick={handleLogoutClick}
+                    className={`btn ${signUpBg}  text-white lg:ml-32 rounded-lg px-3 py-2 duration-500 hover:font-semibold hover:duration-0 lg:static`}
+                  >
+                    Logout
+                  </button>
+                  </>
                 ) : (
                   <>
                     <button
@@ -104,6 +123,13 @@ const NavBar = ({
               </>
             ) : null}
           </ul>
+        </div>
+
+
+        <div onClick={() => setOpen(!open)} className='absolute right-4 top-4  cursor-pointer lg:hidden w-8 h-8'>
+          {
+            open ? <XMarkIcon color={`${sideButtonColor}`} /> : <Bars3Icon color={`${sideButtonColor}`} />
+          }
         </div>
       </div>
     </>
