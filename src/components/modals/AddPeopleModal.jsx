@@ -10,7 +10,7 @@ const AddPeopleModal = ({setShowModal}) => {
             <h1 className='text-3xl font-bold'>Add People</h1>
             <small htmlFor='name' className='text-text'>{`#{Channelname}`}</small>
             <input className='w-full py-3 px-2 mt-3' placeholder='Enter a name or email address' />
-            <small className='max-w-md text-[#525252] mt-1.5'>Add people in the channel will add him in the workspace</small>
+            <small className='max-w-md text-[#525252] mt-1.5'>Add people in the channel will add them in the workspace</small>
             <section className='mt-3 flex justify-between items-center w-full'>
                 <span className='text-[#464446]/75 grow font-medium'></span>
                 <button className='bg-[#1C0C40] border-2 text-white font-light py-1.5 px-5 rounded-lg'>Send Invite</button>
