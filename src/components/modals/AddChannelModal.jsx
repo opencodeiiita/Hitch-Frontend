@@ -39,7 +39,7 @@ const AddChannelModal = ({setShowModal}) => {
                 </aside>
             </section>
             : <aside className='relative w-full'>
-            <input value={input.channelName} className='w-full py-3 px-2' placeholder='# Enter your channel name' onChange={(e)=>setInput(prev=>({...prev,channelName:e.target.value}))} />
+            <input value={input.channelName} className='w-full py-3 px-2 border rounded-md' placeholder='# Enter your channel name' onChange={(e)=>setInput(prev=>({...prev,channelName:e.target.value}))} />
             <span className={`absolute right-2 top-3 ${input.channelName.length >= 25?'text-red-500':'text-text'}`}>{(25 - input.channelName.length)}</span>
             </aside>}
             {!flag && <small className='max-w-md text-[#525252] mt-1.5'>Channels are  converastion that we have on any topics,Use the name which is easy to find and understand </small>}
