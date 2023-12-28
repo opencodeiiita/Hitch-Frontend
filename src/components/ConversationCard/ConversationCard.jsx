@@ -322,8 +322,10 @@ const ConversationCards = ({ loading }) => {
           </>
         ) : (
           <>
-            {[1, 2, 3, 4].map(() => (
-              <MessageBox loading={loading} />
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i}>
+                <MessageBox loading={loading} />
+              </div>
             ))}
           </>
         )}
