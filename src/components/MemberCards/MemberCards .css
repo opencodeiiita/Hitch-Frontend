@@ -1,9 +1,10 @@
 body{
-    margin-left: 10%;
-    margin-right: 10%;
+    padding-top: .5rem;
 }
 .header {
     overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .he1 {
@@ -20,41 +21,63 @@ body{
 .con1{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 hr{
     margin: .5rem;
 }
+.check{
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
 .con1-2{            
     margin-left: 2%;
-}
-img{
-    height: 10rem;
-    width: 9rem;
 }
 .Member-Cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    }
-    .check{
-        padding: 2px;
-    }
+    margin-left: 5%;
+    margin-right: 5%;
+}
 .mem-1{
     border: 1px solid grey;
     border-radius: 5px 5px 5px 5px;
     margin: 1.5%;
-    padding: 1rem;
+    padding-top: 1rem;
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+.mem-1 .button-container {
+    display: none;
+  }
+  
+  .mem-1:hover .button-container {
+    display: flex; /* or display: block; depending on your layout */
+  }
 .mem-1:hover {
     transform: scale(1.05);
     background-color: #7a7373;
     bottom: unset;
-    
+
+}
+#con2-1{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
 }
 .con3{            
     overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .button-container {
     position: absolute;
@@ -63,9 +86,13 @@ img{
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.2s;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .button-container {
     opacity: 1;
+    display: flex;
+    flex-direction: row;
 }
  .sort-filter-container {
     float: right;
@@ -79,8 +106,18 @@ img{
 }
 input{
     border: 2px solid#000000;
-    width: 100%;
+    width: 50%;
     border-radius: 5px 5px 5px 5px;
     background-color: #ffffff;
-    color:rgb(255, 255, 255)
+    color:rgb(255, 255, 255);
+}
+img{
+    height: 8rem;
+    width: 8rem;
+}
+#b1{
+    margin-bottom: -10%;
+}
+#b2{
+    margin-bottom: -10%;
 }
