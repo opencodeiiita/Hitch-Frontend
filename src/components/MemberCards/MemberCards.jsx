@@ -3,9 +3,13 @@ import "./MemberCards.css";
 import img1 from './images/1.jpg';
 import img2 from './images/2.jpg';
 import img3 from './images/3.jpg';
-import img5 from './images/5.jpg';
-import img6 from './images/6.jpg';
 import img4 from './images/4.jpg';
+import img5 from './images/5.jpg';
+import img7 from './images/7.jpg';
+import img8 from './images/8.jpg';
+import img9 from './images/9.jpg';
+import img11 from './images/7.webp';
+import img10 from './images/10.jpg';
 
 const MemberCard = ({ imgSrc, name, community, role }) => (
   <div className="mem-1">
@@ -14,8 +18,8 @@ const MemberCard = ({ imgSrc, name, community, role }) => (
     <div>{community}</div>
     <div>{role}</div>
     <div className="button-container">
-      <button className="bg-blue-500 text-white px-2 py-1 mr-1">Explore</button>
-      <button className="bg-green-500 text-white px-2 py-1">Chat</button>
+      <button className="bg-blue-500 text-white px-2 py-1 mr-1" id="b1">Explore</button>
+      <button className="bg-green-500 text-white px-2 py-1" id="b2">Chat</button>
     </div>
   </div>
 );
@@ -32,9 +36,9 @@ const MemberCards = ({ imgSrc, name, community, role }) => (
       <body>
         <div className="header">
           <div className="he1"><font size="5"><b>People</b></font></div>
-          <div className="he2"><font size="3">Invite People</font></div>
+          <button className="he2"><font size="3">Invite People</font></button>
         </div>
-        <hr />
+        <hr class="check" />
         <div className="con1">
           <div className="con1-1"><b><u>Members</u></b></div>
           <div className="con1-2"><b>Use Groups</b></div>
@@ -64,12 +68,11 @@ const MemberCards = ({ imgSrc, name, community, role }) => (
         </div>
         <br />
         <div className="Member-Cards">
-          <MemberCard imgSrc={img1} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
-          <MemberCard imgSrc={img2} name="Addi Williams" community="Global Community" role="Lead. she/her" />
-          <MemberCard imgSrc={img3} name="Jampson Simson" community="Global Community" role="Lead. she/her" />
-          <MemberCard imgSrc={img4} name="Vova Lisa" community="Global Community" role="Lead. she/her" />
-          <MemberCard imgSrc={img5} name="Lisa Jamson" community="Global Community" role="Lead. she/her" />
-          <MemberCard imgSrc={img6} name="Carlisle" community="Global Community" role="Lead. she/her" />
+          <MemberCard imgSrc={img7} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
+          <MemberCard imgSrc={img8} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
+          <MemberCard imgSrc={img9} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
+          <MemberCard imgSrc={img10} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
+          <MemberCard imgSrc={img11} name="Lizzie Austin" community="Global Community" role="Lead. she/her" />
         </div>
       </body>
     </html>
