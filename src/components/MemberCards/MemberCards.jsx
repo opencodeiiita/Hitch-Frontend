@@ -1,15 +1,10 @@
 import React from 'react';
-import "./MemberCards.css";
-import img1 from './images/1.jpg';
-import img2 from './images/2.jpg';
-import img3 from './images/3.jpg';
-import img4 from './images/4.jpg';
-import img5 from './images/5.jpg';
-import img7 from './images/7.jpg';
-import img8 from './images/8.jpg';
-import img9 from './images/9.jpg';
-import img11 from './images/7.webp';
-import img10 from './images/10.jpg';
+import './MemberCards.css'
+import img7 from '../images/7.jpg';
+import img8 from '../images/8.jpg';
+import img9 from '../images/9.jpg';
+import img11 from '../images/7.webp';
+import img10 from '../images/10.jpg';
 
 const MemberCard = ({ imgSrc, name, community, role }) => (
   <div className="mem-1">
@@ -23,6 +18,7 @@ const MemberCard = ({ imgSrc, name, community, role }) => (
     </div>
   </div>
 );
+ 
 
 const MemberCards = ({ imgSrc, name, community, role }) => (
   <>
@@ -38,11 +34,12 @@ const MemberCards = ({ imgSrc, name, community, role }) => (
           <div className="he1"><font size="5"><b>People</b></font></div>
           <button className="he2"><font size="3">Invite People</font></button>
         </div>
-        <hr class="check" />
-        <div className="con1">
-          <div className="con1-1"><b><u>Members</u></b></div>
-          <div className="con1-2"><b>Use Groups</b></div>
-        </div>
+        <hr className="check" />
+        <nav>
+          <a className="con1-1" href="#"><b><u>Members</u></b></a>
+          <a className="con1-2" href="#"><b>Use Groups</b></a>
+        </nav>
+        <hr className='check1' />
         <br />
         <div className="con2">
           <div>
@@ -78,5 +75,4 @@ const MemberCards = ({ imgSrc, name, community, role }) => (
     </html>
   </>
 );
-
 export default MemberCards;
