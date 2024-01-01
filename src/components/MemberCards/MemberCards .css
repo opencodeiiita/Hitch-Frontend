@@ -5,12 +5,13 @@ body{
     overflow: hidden;
     margin-left: 5%;
     margin-right: 5%;
+    height: 3rem;
+    justify-content: center;
 }
 
 .he1 {
     float: left;
 }
-
 .he2 {
     float: right;
     border: 1px solid black;
@@ -18,14 +19,23 @@ body{
     padding: 0.5%;
     margin-bottom: .5rem;
 }
-.con1{
+nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
     margin-left: 5%;
     margin-right: 5%;
+}
+.marker{
+    height: .1rem;
+    position: relative;
+    top:.5rem;
+    width: 10.5rem;
+    right: 10.5rem;
+    background-color: #000000;
+    transition: 0.5s;
+    border-radius: 4px;
 }
 hr{
     margin: .5rem;
@@ -35,8 +45,16 @@ hr{
     margin-right: 5%;
 
 }
+.check1{
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    bottom: .2rem;
+}
 .con1-2{            
     margin-left: 2%;
+    font-size: .8rem;
+    color: #7a7373;
 }
 .Member-Cards{
     display: grid;
@@ -59,7 +77,7 @@ hr{
 .mem-1 .button-container {
     display: none;
   }
-  
+
   .mem-1:hover .button-container {
     display: flex; /* or display: block; depending on your layout */
   }
@@ -81,7 +99,7 @@ hr{
 }
 .button-container {
     position: absolute;
-    bottom: -20%;
+    bottom: -16%;
     left: 45%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -99,14 +117,13 @@ hr{
     display: flex;
     align-items: center;
 }
-
 .sort-filter-container select {
     margin-left: 1rem;
     padding: 0.5rem;
 }
 input{
     border: 2px solid#000000;
-    width: 50%;
+    width: 40%;
     border-radius: 5px 5px 5px 5px;
     background-color: #ffffff;
     color:rgb(255, 255, 255);
