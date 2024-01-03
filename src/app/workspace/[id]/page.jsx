@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import ConversationCards from "@/components/ConversationCard/ConversationCard";
 import Stack from "@mui/material/Stack";
 import Skeleton from "@mui/material/Skeleton";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 const WorkSpaceIcon = ({ channelId, channelIcon, isActive }) => {
   const router = useRouter();
@@ -170,8 +171,9 @@ export default function Page({ params }) {
             </aside>
           </aside>
         </section>
-        <section className={`h-full w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2 max-sm:mr-4 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
+        <section className={`h-full relative w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2 max-sm:mr-4 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
           {/* Please put the sidebar component inside this without changing any styles of section */}
+          <Sidebar />
         </section>
         <ConversationCards loading={params.id == 1} />
       </div>
