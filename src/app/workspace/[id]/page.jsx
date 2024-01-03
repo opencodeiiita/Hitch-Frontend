@@ -171,8 +171,7 @@ export default function Page({ params }) {
             </aside>
           </aside>
         </section>
-        <section className={`h-full relative w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2 max-sm:mr-4 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
-          {/* Please put the sidebar component inside this without changing any styles of section */}
+        <section className={`h-full relative w-[249px] rounded-lg bg-white mr-2 max-sm:mr-4 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
           <Sidebar />
         </section>
         <ConversationCards loading={params.id == 1} />

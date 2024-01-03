@@ -141,7 +141,7 @@ export default function Sidebar() {
         <>
             <Box component="div" sx={{
                 width: '249px',
-                borderRadius: '10px 0 0 10px ',
+                borderRadius: '10px 10px 10px 10px ',
                 height: '100%',
                 bgcolor: 'background.paper',
                 overflow: 'hidden',
