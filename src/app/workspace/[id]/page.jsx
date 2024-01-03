@@ -21,10 +21,16 @@ const WorkSpaceIcon = ({ channelId, channelIcon, isActive }) => {
 
 export default function Page({ params }) {
   const [loading, setLoading] = useState(true);
+  const [drawerOpen,setDrawerOpen] = useState(false);
   return (
-    <div className="w-screen h-screen bg-background-dark flex flex-col">
-      <nav className="flex justify-between p-2">
-        <span></span>
+    <div className="w-screen h-screen bg-background-dark flex flex-col max-sm:overflow-x-hidden">
+      <nav className="flex justify-between p-2 max-sm:space-x-4">
+        <svg onClick={()=>setDrawerOpen(prev=>!prev)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 ml-3 shrink-0 text-white h-6 sm:hidden">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        <span className="max-sm:hidden"></span>
+        
+
         {/* Enter searchbar here */}
         <aside className="flex items-center w-96 bg-gradient-to-r from-[#8E629A] to-[#7D5584] rounded-md pl-2 space-x-2">
           <svg
@@ -52,7 +58,7 @@ export default function Page({ params }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 text-white"
+          className="w-6 h-6 text-white max-sm:shrink-0"
         >
           <path
             strokeLinecap="round"
@@ -61,8 +67,8 @@ export default function Page({ params }) {
           />
         </svg>
       </nav>
-      <div className="flex grow bg-background-dark pr-2.5 pb-2">
-        <section className="flex flex-col justify-between bg-background-dark pb-6 pl-4">
+      <div className="flex grow bg-background-dark pr-2.5 pb-2 max-sm:pr-0 max-sm:w-fit">
+        <section className={`flex flex-col justify-between bg-background-dark pb-6 pl-4 max-sm:pl-1 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
           <ul className="space-y-2">
             {/* Map over all channels user belongs to here */}
 
@@ -164,7 +170,7 @@ export default function Page({ params }) {
             </aside>
           </aside>
         </section>
-        <section className="h-full w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2">
+        <section className={`h-full w-[249px] bg-white rounded-[10px] rounded-tl-none mr-2 max-sm:mr-4 max-sm:shrink-0 ${drawerOpen?"":"max-sm:hidden"}`}>
           {/* Please put the sidebar component inside this without changing any styles of section */}
         </section>
         <ConversationCards loading={params.id == 1} />
