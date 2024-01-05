@@ -141,7 +141,7 @@ export default function Sidebar() {
         <>
             <Box component="div" sx={{
                 width: '249px',
-                borderRadius: '10px 0 0 10px ',
+                borderRadius: '10px 10px 10px 10px ',
                 height: '100%',
                 bgcolor: 'background.paper',
                 overflow: 'hidden',
@@ -373,13 +373,12 @@ export default function Sidebar() {
                         </div>
                     </Collapse>
                 </List>
-                <div className="fixed bottom-2 left-10  flex justify-center p-4">
+
                     <button
-                        className=" text-[16px] bg-[#2F1B5A] font-inter font-semibold text-white rounded-[18px] px-10 py-2 hover:bg-purple-900"
+                        className="absolute bottom-4 right-20 text-base bg-[#2F1B5A] font-inter font-semibold text-white rounded-[18px] px-8 py-2 hover:bg-purple-900"
                     >
                         Invite
                     </button>
-                </div>
             </Box >
         </>
     );
