@@ -3,7 +3,7 @@ import React, {useState,useEffect} from 'react'
 import Logo from "../../../public/Logo.svg";
 import ModalBg1 from "../../../public/ModalBg1.svg";
 import ModalBg2 from "../../../public/ModalBg2.svg";
-import { useCreateWorkspace } from '@/utils/api';
+import { useEditWorkspace } from '@/utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styled from "styled-components";
@@ -22,8 +22,8 @@ const Overlay = styled.div`
   z-index: 999;
 `
 
-const CreateWorkspace = ({setShowModal}) => {
-    const [input,setInput] = useState({workspaceName:"",workspaceDescription:"",workspaceid:""});
+const EditWorkspace = ({setShowModal,val}) => {
+    const [input,setInput] = useState({workspaceName:val.name,workspaceDescription:val.description,workspaceid:val.workspaceId});
     const [flag, setFlag] = useState({currentField:"workspaceName",next:{currentField:"workspaceDescription",next:{currentField:"workspaceid"}}});
 
     const changeHandler=(inputField,text)=>
@@ -31,11 +31,11 @@ const CreateWorkspace = ({setShowModal}) => {
         setInput(prev=>({...prev,[inputField]:text}));
     }
 
-    const createWorkspaceMutation = useCreateWorkspace();
+    const router = useRouter()
+
+    const editWorkspaceMutation = useEditWorkspace();
 
     const [loadingOverlay, setLoadingOverlay] = useState(false);
-
-    const router = useRouter()
 
     const textPicker = (currentField)=>
     {
@@ -63,14 +63,16 @@ const CreateWorkspace = ({setShowModal}) => {
             // Enter actual function to call create workspace API
             try {
                 setLoadingOverlay(true);
+                console.log(val);
                 const { workspaceName, workspaceDescription, workspaceid } = input;
-                const { data } = await createWorkspaceMutation.mutateAsync({
+                const { data } = await editWorkspaceMutation.mutateAsync({
                     name: workspaceName, 
                     description: workspaceDescription, 
-                    workspaceId: workspaceid 
+                    workspaceId: workspaceid,
+                    id: val.id 
                 });
                 console.log(data);
-                toast.success('Workspace successful!');
+                toast.success('Workspace Updated successful!');
                 router.push('/workspace');
 
               } catch (error) {
@@ -105,7 +107,7 @@ const CreateWorkspace = ({setShowModal}) => {
                 <Image src={Logo} alt="Hitch Logo" className='justify-self-center self-start'/>
                 <Image src={ModalBg2} alt="Secondary background" className='-mb-[10%]'/>
             </section>
-            <h1 className='text-2xl font-semibold -mt-5 max-sm:mt-0'>Create a Workspace</h1>
+            <h1 className='text-2xl font-semibold -mt-5 max-sm:mt-0'>Edit a Workspace</h1>
             <p className='text-[#525252] text-[19px] mt-3 mb-6 max-sm:text-xs'>Start creating a workspace to manage your teams</p>
             <input className='py-3 px-2.5 border border-[#DED2D9] rounded-md placeholder:text-xl w-10/12 max-sm:placeholder:text-base'
              placeholder={textPicker(flag.currentField)}
@@ -115,7 +117,7 @@ const CreateWorkspace = ({setShowModal}) => {
             <button className='bg-primary text-white text-xl max-sm:text-sm py-4 mt-5 w-10/12 rounded-full hover:shadow-sm hover:shadow-primary disabled:brightness-75 disabled:hover:cursor-not-allowed'
              disabled={input[flag.currentField]===""}
              onClick={clickHandler}>
-                {flag.next?"Next":"Create Workspace"}
+                {flag.next?"Next":"Edit Workspace"}
             </button>
 
             <section className='w-10/12 mt-8 flex items-center h-6'>
@@ -152,4 +154,4 @@ const CreateWorkspace = ({setShowModal}) => {
   )
 }
 
-export default CreateWorkspace
+export default EditWorkspace
