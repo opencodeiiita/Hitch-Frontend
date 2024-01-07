@@ -2,13 +2,28 @@
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navbar/NavBar";
 import Image from "next/image";
-
-import Card from "@/components/workspace/Card.js";
 import CreateWorkspace from "@/components/workspace/CreateWorkspace";
 import Table from "@/components/workspace/Table";
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ScrollTrigger from "react-scroll-trigger";
+import { useGetWorkspaces } from "@/utils/api";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import styled from "styled-components";
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+`;
+
 const Page = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +35,31 @@ const Page = () => {
   }
   const [navbar, setNavbar] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [workspaceData,setWorkspaceData] = useState([]);
+
+  const [loadingOverlay, setLoadingOverlay] = useState(false);
+
+  const getWorkspaceMutation = useGetWorkspaces();
+
   useEffect(() => {
+    const funGetWorkspace = async () => {
+      try {
+        setLoadingOverlay(true);
+        const { data } = await getWorkspaceMutation.mutateAsync();
+        console.log(data);
+        setWorkspaceData(data);
+        toast.success('Workspace fetched successful!');
+      } catch (error) {
+        console.log(error);
+        console.error('Registration error:', error.message);
+        toast.error(error.message || 'An error occurred.');
+      }
+      finally {
+        // Hide loading overlay after the mutation is complete
+        setLoadingOverlay(false);
+      }
+     }
+     funGetWorkspace();
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 576);
     };
@@ -33,6 +72,13 @@ const Page = () => {
   const isAuth = true;
   return (
     <>
+      {loadingOverlay && (
+        <Overlay>
+          <p>Loading...</p>
+        </Overlay>
+      )}
+
+      <ToastContainer />
       {showModal && <CreateWorkspace setShowModal={setShowModal} />}
       <ScrollTrigger onEnter={onEnterViewport} onExit={onExitViewport}>
         <NavBar
@@ -81,8 +127,8 @@ const Page = () => {
               Welcome Back
             </h>
           </div>
-          <Table />
-          <Table buttonText="Joined" />
+          <Table data={workspaceData} />
+          <Table data={workspaceData} buttonText="Joined" />
         </div>
         <aside className="absolute bg-[#1B1633] w-full h-[300vh] sm:h-[60vh] top-0 left-0 -z-20"></aside>
         <aside className="absolute w-[73vw] h-[73vw] bg-[#8A2FFF]  -top-[20vw] -left-[20vw] sm:hidden blur-[180px] -z-10"></aside>

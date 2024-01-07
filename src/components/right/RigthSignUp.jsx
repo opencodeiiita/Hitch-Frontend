@@ -21,14 +21,6 @@ const Overlay = styled.div`
   z-index: 999;
 `;
 
-const ModalContent = styled.div`
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-`;
-
 const Checkbox = styled.input`
   appearance: none;
   width: 15px;
@@ -90,7 +82,6 @@ const RigthSignUp = () => {
   const router = useRouter()
 
   const [loadingOverlay, setLoadingOverlay] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -150,12 +141,6 @@ const RigthSignUp = () => {
       // Hide loading overlay after the mutation is complete
       setLoadingOverlay(false);
     }
-  };
-
-  const closeModal = () => {
-    setModalContent(null);
-    // Reset mutation state
-    registerUserMutation.reset();
   };
 
   const [isMobile, setIsMobile] = useState(() => {
