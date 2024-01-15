@@ -72,10 +72,18 @@ const FileSharingModal = ({setShowModal}) => {
     const [file,setFile] = useState("");
     const [tagFlag,setTagFlag] = useState(false);
     const [tags,setTags] = useState([]);
+    const [path,setPath] = useState("");
+
+    const isDisabled = () => name==="" || file==="" || tags.length===0 || path===""
+
+    const clickHandler = () =>
+    {
+        // Enter function to handle share file click
+    }
     
   return (
-    <div className='w-screen h-screen bg-black/40 fixed z-30 flex justify-center items-center '>
-        <main className='relative bg-white w-[480px] py-4 px-6 rounded-md flex flex-col items-stretch space-y-2'>
+    <div className='w-screen h-screen bg-black/40 fixed z-30 flex justify-center items-center  '>
+        <main className='relative bg-white w-[480px] py-4 px-6 rounded-md flex flex-col items-stretch space-y-2 max-sm:h-full max-sm:w-full'>
             <svg className="w-6 h-6 absolute right-5 top-5 hover:text-red-500 hover:cursor-pointer" onClick={()=>setShowModal(false)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -111,10 +119,20 @@ const FileSharingModal = ({setShowModal}) => {
 
             <aside className='flex flex-col space-y-1'>
                 <label  className='text-gray-600 font-semibold'>Add Path</label>
-                <input className='border rounded border-text py-1.5 px-2' placeholder='Enter the path of file'/>
-                <small className='text-text font-semibold'>The Above means that in File Section it will be saved in Paper folder in Endsem folder in Exams folder</small>
+                <input value={path}  className='border rounded border-text py-1.5 px-2 font-semibold' placeholder='Enter the path of file' onChange={(e) => {
+                    const inputValue = e.target.value.replace(/[^a-zA-Z0-9/]/g, '');
+                    setPath(inputValue);
+                    }}/>
+                { <small className={`text-text font-semibold ${path===""?"invisible":"visible"}`}>
+                   <span>The Above means that in File Section it will be saved in </span>
+                    {path.split('/').reverse().map((folder, index, array) => (
+                    <span key={folder}>
+                        {folder} folder{index < array.length - 1 ? ' in ' : ''}
+                    </span>
+                    ))}
+                </small>}
             </aside>
-            <button className='text-white bg-primary py-2 px-4 rounded-md self-end' >Share File</button>
+            <button className='text-white bg-primary py-2 px-4 rounded-md self-end disabled:brightness-50 disabled:hover:cursor-not-allowed' disabled={isDisabled()} onClick={clickHandler}>Share File</button>
         </main>
     </div>
   )
