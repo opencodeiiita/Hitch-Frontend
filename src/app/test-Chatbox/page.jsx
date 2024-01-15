@@ -6,6 +6,7 @@ import AddPeopleModal from '@/components/modals/AddPeopleModal'
 import AddSubChannelModal from '@/components/modals/AddSubChannelModal'
 import DeleteChannelModal from '@/components/modals/DeleteChannelModal'
 import DeleteSubChannelModal from '@/components/modals/DeleteSubChannelModal'
+import HuddleComponent from '@/components/huddles/HuddleComponent'
 
 const Page = () => {
   const [showChannelModal,setShowChannelModal] = useState(false);
@@ -13,6 +14,7 @@ const Page = () => {
   const [showSubChannelModal,setShowSubChannelModal] = useState(false);
   const [showDeleteChannelModal,setShowDeleteChannelModal] = useState(false);
   const [showDeleteSubChannelModal,setShowDeleteSubChannelModal] = useState(false);
+  const [showHuddleModal, setShowHuddleModal] = useState(false);
   return (
     <>
    <Chatbox/>
@@ -26,6 +28,17 @@ const Page = () => {
    {showSubChannelModal && <AddSubChannelModal setShowModal={setShowSubChannelModal}/> }
    {showChannelModal && <AddChannelModal setShowModal={setShowChannelModal}/> }
    {showPeopleModal && <AddPeopleModal setShowModal={setShowPeopleModal} /> }
+   <button 
+      className='bg-primary text-white px-2 py-1 rounded-md mx-5'
+      onClick={() => setShowHuddleModal(true)}
+    >
+      Click to open huddle modal
+    </button>
+
+    {/* Conditionally render the HuddleComponent modal */}
+    {showHuddleModal && (
+      <HuddleComponent setShowModal={setShowHuddleModal} />
+    )}
    </>
   )
 }
