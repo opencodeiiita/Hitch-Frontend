@@ -34,7 +34,7 @@ const AddTag = ({setTagFlag, setTags}) =>
     const [tag,setTag] = useState("");
     const clickHandler = () =>
     {
-        setTags(prev=>[...prev,tag]);
+        setTags(prev=>[...prev,{tag,color:getRandomColor()}]);
         setTagFlag(false);
     }
     return (
@@ -46,11 +46,17 @@ const AddTag = ({setTagFlag, setTags}) =>
     )
 }
 
-const Tags = () =>
+const Tags = ({tags,setTags}) =>
 {
     return (
-        <ul>
-            <li className={`bg-[${getRandomColor()}] p-1.5 rounded-full`}></li>
+        <ul className='flex space-x-2 flex-wrap '>
+            {tags.map(({tag,color})=>(
+             <li className='bg-[${color}] mb-1 px-3 py-0.5 rounded-full flex items-center space-x-1.5' style={{backgroundColor:color}}>
+                <span className='text-white'>{tag}</span>
+                <svg className="w-4 h-4 text-white hover:cursor-pointer" onClick={()=>setTags(prev=>prev.filter(item=>item.tag!==tag))} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </li>))}
         </ul>
         
     )
@@ -84,9 +90,14 @@ const FileSharingModal = ({setShowModal}) => {
                 <label  className='text-gray-600 font-semibold'>Add Tags</label>
                 {tagFlag
                 ?<AddTag setTagFlag={setTagFlag} setTags={setTags} />
-                :<svg onClick={()=>setTagFlag(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500 hover:cursor-pointer">
+                :(<aside className='flex items-center'>
+                <Tags tags={tags} setTags={setTags}/>
+                <svg onClick={()=>setTagFlag(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500 hover:cursor-pointer mb-1 ml-1">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>}
+                </svg>
+                </aside>
+                )
+                }
 
             </aside>
 
