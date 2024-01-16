@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import MessageBox from "../messageBox/MessageBox";
 import Skeleton from "@mui/material/Skeleton";
+import FileSharingModal from "../modals/FileSharingModal";
 
 const ConversationCards = ({ loading }) => {
   const [text, settext] = useState("");
+  const [showModal,setShowModal] = useState(false);
 
   const changeSelectedText = (markup) => {
     const textarea = document.getElementById("textAreaConversationCard");
@@ -92,6 +94,8 @@ const ConversationCards = ({ loading }) => {
   });
 
   return (
+    <>
+    { showModal && <FileSharingModal setShowModal={setShowModal} />}
     <div
       className="h-[calc(100vh_-_48px)] grow rounded-[10px] border-[6px] border-white bg-white m-auto flex flex-col w-full 
       justify-between overflow-hidden"
@@ -576,12 +580,14 @@ const ConversationCards = ({ loading }) => {
           ></textarea>
           <div className="flex justify-between p-[8px]">
             <div className="flex flex-wrap gap-[8px]  flex-row items-center">
+              {/* Open modal here */}
               <svg
                 width="30"
                 height="31"
                 viewBox="0 0 30 31"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                
               >
                 <rect
                   y="0.772461"
@@ -589,6 +595,7 @@ const ConversationCards = ({ loading }) => {
                   height="30"
                   rx="15"
                   fill="#571F6A"
+                  onClick={()=>setShowModal(true)}
                 />
                 <path
                   d="M14.9998 10.4391V15.7725M14.9998 15.7725V21.1058M14.9998 15.7725H9.6665M14.9998 15.7725H20.3332"
@@ -752,6 +759,7 @@ const ConversationCards = ({ loading }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 export default ConversationCards;
